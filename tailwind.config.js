@@ -24,6 +24,7 @@ module.exports = {
     },
     colors: {
       'orange-main': '#FF5300',
+      white: '#FFFFFF',
       'dark-white-bg': '#FFF7F4',
       'main-bg': '#373737',
       'gray-pg': '#7B7B7B',

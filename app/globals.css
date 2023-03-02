@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.overlapGrid {
+  display: grid;
+  grid-template-areas: "image" "overlay";
+  position: relative;
+}

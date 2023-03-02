@@ -4,7 +4,7 @@ import Header from '@widgets/header';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const poppins = Poppins({
-  weight: ['300', '400', '500', '700'],
+  weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
   variable: '--font-poppins',
 });
@@ -20,9 +20,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
           </div>
         </header>
-        <div className="container">{children}</div>
+        {children}
         <footer>
-          <div className="container" />
+          <div className="container " />
         </footer>
       </body>
     </html>

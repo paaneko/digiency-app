@@ -5,12 +5,12 @@ function Header() {
         <p className="text-orange-main">Digi</p>ency
       </div>
       <div className="text-xl flex space-x-6">
-        <div className="hover:text-orange-main cursor-pointer">Home</div>
-        <div className="hover:text-orange-main cursor-pointer">About Us</div>
-        <div className="hover:text-orange-main cursor-pointer">Services</div>
-        <div className="hover:text-orange-main cursor-pointer">Portfolio</div>
-        <div className="hover:text-orange-main cursor-pointer">Blog</div>
-        <div className="hover:text-orange-main cursor-pointer">Contact Us</div>
+        <div className="hover:text-orange-main cursor-pointer duration-500">Home</div>
+        <div className="hover:text-orange-main cursor-pointer duration-500">About Us</div>
+        <div className="hover:text-orange-main cursor-pointer duration-500">Services</div>
+        <div className="hover:text-orange-main cursor-pointer duration-500">Portfolio</div>
+        <div className="hover:text-orange-main cursor-pointer duration-500">Blog</div>
+        <div className="hover:text-orange-main cursor-pointer duration-500">Contact Us</div>
       </div>
       <div className="text-xl">
         <button
