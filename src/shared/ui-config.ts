@@ -1,6 +1,11 @@
-import { PortfolioProjectsConfigType, ServicesConfigType } from '@shared/ui-types';
+import {
+  HomeBlogCardPreviewType,
+  HomeContactInfoType,
+  HomePortfolioProjectsType,
+  HomeServicesType,
+} from '@shared/ui-types';
 
-export const servicesConfig: ServicesConfigType[] = [
+export const servicesConfig: HomeServicesType[] = [
   {
     img: 'graphic-designservices-icons.svg',
     label: 'Graphic Design',
@@ -45,7 +50,7 @@ export const servicesConfig: ServicesConfigType[] = [
   },
 ];
 
-export const portfolioProjectsConfig: PortfolioProjectsConfigType[] = [
+export const portfolioProjectsConfig: HomePortfolioProjectsType[] = [
   {
     label: 'project-1',
     img: '/project-1.png',
@@ -83,3 +88,56 @@ export const portfolioProjectsConfig: PortfolioProjectsConfigType[] = [
     img: '/project-9.png',
   },
 ];
+
+export const blogCardPreviewConfig: HomeBlogCardPreviewType[] = [
+  {
+    img: '/demo-blog-card-preview-1.png',
+    label: '35 Stellar Graphic Design Blogs to Keep YouEducated and Inspired',
+    time: 'January 25, 2021',
+    author: 'Cristofer Westervelt',
+    comments_count: 10,
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget nunc, sed sed sed. Sit integer at dui at non ipsum tellus ac. Est.',
+  },
+  {
+    img: '/demo-blog-card-preview-2.png',
+    label: 'Ridiculously powerful 2021 iPad Pro may drop this month',
+    time: 'January 25, 2021',
+    author: 'Cristofer Westervelt',
+    comments_count: 10,
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget nunc, sed sed sed. Sit integer at dui at non ipsum tellus ac. Est.',
+  },
+  {
+    img: '/demo-blog-card-preview-3.png',
+    label: 'Memphis Design: the defining look of the 1980s',
+    time: 'January 25, 2021',
+    author: 'Cristofer Westervelt',
+    comments_count: 10,
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget nunc, sed sed sed. Sit integer at dui at non ipsum tellus ac. Est.',
+  },
+];
+
+export const contactInfoConfig: HomeContactInfoType = {
+  mailUs: {
+    icon: 'contact-mail.svg',
+    slogan: 'Drop a line',
+    label: 'Mail Us',
+    first_email: 'Support87@gmial.com',
+    second_email: 'ijkuiu874@gmial.com',
+  },
+  callUs: {
+    icon: 'contact-map-pin.svg',
+    slogan: '24/7 Service',
+    label: 'Call Us',
+    first_phone: '+880 265 98745',
+    second_phone: '+895 855 85589',
+  },
+  visitUs: {
+    icon: 'contact-phone-call.svg',
+    slogan: 'Location',
+    label: 'Visit Us',
+    address: '158 ralegih sit, houston, yk 5896,uk',
+  },
+};

@@ -1,10 +1,13 @@
 import { HeroOne } from '@entities/hero';
-import { portfolioProjectsConfig, servicesConfig } from '@shared/ui-config';
+import { blogCardPreviewConfig, contactInfoConfig, portfolioProjectsConfig, servicesConfig } from '@shared/ui-config';
 import { OurServices } from '@entities/home-ui/our-services';
 import Image from 'next/image';
-import { PortfolioProjectsConfigType } from '@shared/ui-types';
+import { HomePortfolioProjectsType } from '@shared/ui-types';
 import { PortfolioProjects } from '@entities/home-ui/portfolio-projects';
 import { Rewiew } from '@entities/home-ui/our-testimonial/rewiew';
+import { BlogCardPreview } from '@entities/blog-ui/blog-card-preview';
+import { ContactCards } from '@entities/contact-info/contact-cards';
+import { ContactUsForm } from '@entities/contact-info/contact-form';
 
 export default function Home() {
   return (
@@ -16,7 +19,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="container my-[120px]">
+          <div className="container my-[120px] ">
             <div className="text-orange-main flex items-center justify-center">
               <hr className="bg-orange-main w-8" />
               <div className="mx-2 font-normal">Our Services</div>
@@ -85,7 +88,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex flex-wrap justify-between">
-                {portfolioProjectsConfig.map((portfolioProject: PortfolioProjectsConfigType) => (
+                {portfolioProjectsConfig.map((portfolioProject: HomePortfolioProjectsType) => (
                   <PortfolioProjects
                     key={portfolioProject.label}
                     img={portfolioProject.img}
@@ -185,6 +188,67 @@ export default function Home() {
                 </div>
                 <div className="font-semibold text-5xl text-center mb-1 mx-8">120</div>
                 <div className="text-xl font-medium text-center">Hight Rankings</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="bg-dark-white-bg">
+          <div className="py-[120px]">
+            <div className="container flex-row justify-center">
+              <div className="flex justify-center">
+                <div className="">
+                  <div className="flex justify-center">
+                    <div className="text-orange-main flex items-center">
+                      <hr className="bg-orange-main w-8" />
+                      <div className="mx-2 font-normal text-center">Our Blog</div>
+                      <hr className="bg-orange-main w-8" />
+                    </div>
+                  </div>
+                  <div className="font-semibold text-[39px] leading-[58px] ">Every Singel Update From Here</div>
+                </div>
+              </div>
+              <div className="flex justify-between mt-[60px]">
+                {blogCardPreviewConfig.map((card) => (
+                  <BlogCardPreview
+                    img={card.img}
+                    label={card.label}
+                    time={card.time}
+                    author={card.author}
+                    comments_count={card.comments_count}
+                    title={card.title}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="">
+          <div className="py-[120px]">
+            <div className="container flex-row justify-center">
+              <div className="">
+                <div className="flex justify-center">
+                  <div className="text-orange-main flex items-center">
+                    <hr className="bg-orange-main w-8" />
+                    <div className="mx-2 font-normal text-center">Contact Us</div>
+                    <hr className="bg-orange-main w-8" />
+                  </div>
+                </div>
+                <div className="flex-col">
+                  <div className="font-semibold text-[39px] leading-[58px] text-center">
+                    Feel <span className="text-orange-main">Free</span>
+                  </div>
+                  <div className="font-semibold text-[39px] leading-[58px] text-center">
+                    <span className="text-orange-main">to Contact</span> With Us
+                  </div>
+                </div>
+                <ContactCards
+                  mailUs={contactInfoConfig.mailUs}
+                  callUs={contactInfoConfig.callUs}
+                  visitUs={contactInfoConfig.visitUs}
+                />
+                <div className="container mt-[60px]">
+                  <ContactUsForm />
+                </div>
               </div>
             </div>
           </div>

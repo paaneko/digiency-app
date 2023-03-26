@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { ServicesConfigType } from '@shared/ui-types';
+import { HomeServicesType } from '@shared/ui-types';
 
-export function OurServices({ img, label, titles, description }: ServicesConfigType) {
+export function OurServices({ img, label, titles, description }: HomeServicesType) {
   return (
     <div className="my-[15px]">
       <div className="rounded-md cursor-pointer w-[370px] h-[290px] flex-col shadow-lg text-gray-pg hover:bg-orange-main hover:text-white duration-500">

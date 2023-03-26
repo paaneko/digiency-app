@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function HeroOne() {
   return (
-    <div className="flex justify-between py-[100px] ">
+    <div className="flex justify-between pb-[100px] pt-[160px] ">
       <div className="max-w-[660px]">
         <h1 className="font-bold text-[48.83px] leading-[73px] mb-[18px] pt-[38px]">
           Choose What Matters To Your Business & Your Customers.

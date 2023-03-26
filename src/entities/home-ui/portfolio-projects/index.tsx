@@ -1,7 +1,7 @@
-import { PortfolioProjectsConfigType } from '@shared/ui-types';
+import { HomePortfolioProjectsType } from '@shared/ui-types';
 import Image from 'next/image';
 
-export function PortfolioProjects({ img, label }: PortfolioProjectsConfigType) {
+export function PortfolioProjects({ img, label }: HomePortfolioProjectsType) {
   return (
     <div className="my-[15px] overlapGrid cursor-pointer">
       <Image className="" width={370} height={238} src={img} alt={label} />
