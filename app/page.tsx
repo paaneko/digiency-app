@@ -1,13 +1,13 @@
-import { HeroOne } from '@entities/hero';
-import { blogCardPreviewConfig, contactInfoConfig, portfolioProjectsConfig, servicesConfig } from '@shared/ui-config';
-import { OurServices } from '@entities/home-ui/our-services';
+import { HeroOne } from '@entities/home/hero';
+import { contactInfoConfig, portfolioProjectsConfig, servicesConfig, homeBlogCardList } from '@shared/ui-config';
+import { OurServices } from '@entities/home/ui/our-services';
 import Image from 'next/image';
 import { HomePortfolioProjectsType } from '@shared/ui-types';
-import { PortfolioProjects } from '@entities/home-ui/portfolio-projects';
-import { Rewiew } from '@entities/home-ui/our-testimonial/rewiew';
-import { BlogCardPreview } from '@entities/blog-ui/blog-card-preview';
-import { ContactCards } from '@entities/contact-info/contact-cards';
-import { ContactUsForm } from '@entities/contact-info/contact-form';
+import { PortfolioProjects } from '@entities/home/ui/portfolio-projects';
+import { Rewiew } from '@entities/home/ui/our-testimonial/rewiew';
+import { BlogCardPreview } from '@entities/home/our-blog/blog-card-preview';
+import { ContactCards } from '@entities/home/contact-info/contact-cards';
+import { ContactUsForm } from '@entities/home/contact-info/contact-form';
 
 export default function Home() {
   return (
@@ -137,19 +137,19 @@ export default function Home() {
                 Ipsum in aliquam eget vitae purus felis eget massa felis. Eu mattis in malesuada facilisi proin vel.
               </div>
               <div className="flex justify-between">
-                <div className="shadow-lg rounded-lg pt-[11px] w-[125px] h-[108px]">
+                <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
                   <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">80%</div>
                   <div className="text-center font-light text-xs">Softwer Development</div>
                 </div>
-                <div className="shadow-lg rounded-lg pt-[11px] w-[125px] h-[108px]">
+                <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
                   <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">90%</div>
                   <div className="text-center font-light text-xs">Graphic Design</div>
                 </div>
-                <div className="shadow-lg rounded-lg pt-[11px] w-[125px] h-[108px]">
+                <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
                   <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">85%</div>
                   <div className="text-center font-light text-xs">Game Design</div>
                 </div>
-                <div className="shadow-lg rounded-lg pt-[11px] w-[125px] h-[108px]">
+                <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
                   <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">100%</div>
                   <div className="text-center font-light text-xs">
                     Web <br /> Development
@@ -208,7 +208,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex justify-between mt-[60px]">
-                {blogCardPreviewConfig.map((card) => (
+                {homeBlogCardList.map((card) => (
                   <BlogCardPreview
                     img={card.img}
                     label={card.label}

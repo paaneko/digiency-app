@@ -1,8 +1,11 @@
 import {
-  HomeBlogCardPreviewType,
+  CategoryItemType,
+  BlogCardType,
   HomeContactInfoType,
   HomePortfolioProjectsType,
   HomeServicesType,
+  LatestPostCardType,
+  TagItemType,
 } from '@shared/ui-types';
 
 export const servicesConfig: HomeServicesType[] = [
@@ -89,7 +92,55 @@ export const portfolioProjectsConfig: HomePortfolioProjectsType[] = [
   },
 ];
 
-export const blogCardPreviewConfig: HomeBlogCardPreviewType[] = [
+export const blogCardList: BlogCardType[] = [
+  {
+    img: '/main-blog-card-preview-1.png',
+    label: '35 Stellar Graphic Design Blogs to Keep YouEducated and Inspired',
+    time: 'January 25, 2021',
+    author: 'Cristofer Westervelt',
+    comments_count: 10,
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices facilisi sed tincidunt mauris duis pulvinar convallis eu. Lobortis scelerisque aliquam massa arcu, eget. Sociis odio quis eget lacus. Dolor at enim viverra laoreet molestie amet cursus et. Sed lacus, viverra lacinia scelerisque cras aliquam blandit.',
+  },
+  {
+    img: '/main-blog-card-preview-2.png',
+    label: 'Ridiculously powerful 2021 iPad Pro may drop this month',
+    time: 'January 25, 2021',
+    author: 'Cristofer Westervelt',
+    comments_count: 10,
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices facilisi sed tincidunt mauris duis pulvinar convallis eu. Lobortis scelerisque aliquam massa arcu, eget. Sociis odio quis eget lacus. Dolor at enim viverra laoreet molestie amet cursus et. Sed lacus, viverra lacinia scelerisque cras aliquam blandit.',
+  },
+  {
+    img: '/main-blog-card-preview-3.png',
+    label: 'Memphis Design: the defining look of the 1980s',
+    time: 'January 25, 2021',
+    author: 'Cristofer Westervelt',
+    comments_count: 10,
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices facilisi sed tincidunt mauris duis pulvinar convallis eu. Lobortis scelerisque aliquam massa arcu, eget. Sociis odio quis eget lacus. Dolor at enim viverra laoreet molestie amet cursus et. Sed lacus, viverra lacinia scelerisque cras aliquam blandit.',
+  },
+  {
+    img: '/main-blog-card-preview-4.png',
+    label: 'Memphis Design: the defining look of the 1980s',
+    time: 'January 25, 2021',
+    author: 'Cristofer Westervelt',
+    comments_count: 10,
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices facilisi sed tincidunt mauris duis pulvinar convallis eu. Lobortis scelerisque aliquam massa arcu, eget. Sociis odio quis eget lacus. Dolor at enim viverra laoreet molestie amet cursus et. Sed lacus, viverra lacinia scelerisque cras aliquam blandit.',
+  },
+  {
+    img: '/main-blog-card-preview-5.png',
+    label: 'Memphis Design: the defining look of the 1980s',
+    time: 'January 25, 2021',
+    author: 'Cristofer Westervelt',
+    comments_count: 10,
+    title:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultrices facilisi sed tincidunt mauris duis pulvinar convallis eu. Lobortis scelerisque aliquam massa arcu, eget. Sociis odio quis eget lacus. Dolor at enim viverra laoreet molestie amet cursus et. Sed lacus, viverra lacinia scelerisque cras aliquam blandit.',
+  },
+];
+
+export const homeBlogCardList: BlogCardType[] = [
   {
     img: '/demo-blog-card-preview-1.png',
     label: '35 Stellar Graphic Design Blogs to Keep YouEducated and Inspired',
@@ -141,3 +192,75 @@ export const contactInfoConfig: HomeContactInfoType = {
     address: '158 ralegih sit, houston, yk 5896,uk',
   },
 };
+
+export const latestPostList: LatestPostCardType[] = [
+  {
+    img: '/latest-post-avatar.png',
+    refLink: '#',
+    label: 'Minimal Post With A Preview Image',
+  },
+  {
+    img: '/latest-post-avatar.png',
+    refLink: '#',
+    label: 'Good Design Makes Me Happy',
+  },
+  {
+    img: '/latest-post-avatar.png',
+    refLink: '#',
+    label: 'Best 27 Design Blogs for 2021',
+  },
+  {
+    img: '/latest-post-avatar.png',
+    refLink: '#',
+    label: 'Creative Ways To Use Infographics For Your Business',
+  },
+  {
+    img: '/latest-post-avatar.png',
+    refLink: '#',
+    label: 'Tumblr Banner Templates: Tips To Get Better Engagement',
+  },
+];
+
+export const categoriesList: CategoryItemType[] = [
+  {
+    label: 'Business',
+    countCategories: 5,
+  },
+  {
+    label: 'Introduction',
+    countCategories: 15,
+  },
+  {
+    label: 'Design Blog',
+    countCategories: 65,
+  },
+  {
+    label: 'UI/UX Design',
+    countCategories: 8,
+  },
+  {
+    label: 'App Development',
+    countCategories: 16,
+  },
+];
+
+export const tagList: TagItemType[] = [
+  {
+    label: 'Business',
+  },
+  {
+    label: 'Graphic Design',
+  },
+  {
+    label: 'Technology',
+  },
+  {
+    label: 'App Development',
+  },
+  {
+    label: 'Website Design',
+  },
+  {
+    label: 'Business Idea',
+  },
+];

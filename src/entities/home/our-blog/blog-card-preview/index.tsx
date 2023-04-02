@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { HomeBlogCardPreviewType } from '@shared/ui-types';
+import { BlogCardType } from '@shared/ui-types';
 import { OrangeButtton } from '@shared/ui/buttons/orange-button';
 
-export function BlogCardPreview({ img, author, label, time, comments_count, title }: HomeBlogCardPreviewType) {
+export function BlogCardPreview({ img, author, label, time, comments_count, title }: BlogCardType) {
   return (
     <div className="w-[370px] p-[15px] bg-white rounded-lg">
       <div className="flex space-x-2">

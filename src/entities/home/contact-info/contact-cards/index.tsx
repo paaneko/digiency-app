@@ -4,7 +4,7 @@ import Image from 'next/image';
 export function ContactCards({ mailUs, callUs, visitUs }: HomeContactInfoType) {
   return (
     <div className="flex justify-between mt-14">
-      <div className="pt-4 pl-4 pb-6 shadow-lg w-[370px] h-[270px]">
+      <div className="pt-4 pl-4 pb-6 shadow-div w-[370px] h-[270px]">
         <div className="flex mt-[18px]">
           <div className="flex items-center justify-center w-[75px] h-[75px] rounded-full bg-orange-main">
             <Image width={31} height={31} src={mailUs.icon} alt={mailUs.label} />
@@ -19,7 +19,7 @@ export function ContactCards({ mailUs, callUs, visitUs }: HomeContactInfoType) {
           <div className="">{mailUs.second_email}</div>
         </div>
       </div>
-      <div className="pt-4 pl-4 pb-6 shadow-lg w-[370px] h-[270px]">
+      <div className="pt-4 pl-4 pb-6 shadow-div w-[370px] h-[270px]">
         <div className="flex mt-[18px]">
           <div className="flex items-center justify-center w-[75px] h-[75px] rounded-full bg-orange-main">
             <Image width={30} height={24} src={callUs.icon} alt={callUs.label} />
@@ -37,7 +37,7 @@ export function ContactCards({ mailUs, callUs, visitUs }: HomeContactInfoType) {
           <div className="">{callUs.second_phone}</div>
         </div>
       </div>
-      <div className="pt-4 pl-4 pb-6 shadow-lg w-[370px] h-[270px]">
+      <div className="pt-4 pl-4 pb-6 shadow-div w-[370px] h-[270px]">
         <div className="flex mt-[18px]">
           <div className="flex items-center justify-center w-[75px] h-[75px] rounded-full bg-orange-main">
             <Image width={27} height={33} src={visitUs.icon} alt={visitUs.label} />

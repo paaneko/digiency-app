@@ -10,7 +10,7 @@ export type HomePortfolioProjectsType = {
   img: string;
 };
 
-export type HomeBlogCardPreviewType = {
+export type BlogCardType = {
   img: string;
   label: string;
   time: string;
@@ -40,4 +40,19 @@ export type HomeContactInfoType = {
     label: string;
     address: string;
   };
+};
+
+export type LatestPostCardType = {
+  img: string;
+  refLink: string;
+  label: string;
+};
+
+export type CategoryItemType = {
+  label: string;
+  countCategories: number;
+};
+
+export type TagItemType = {
+  label: string;
 };

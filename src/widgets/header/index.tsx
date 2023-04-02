@@ -1,3 +1,4 @@
+// TODO create onscroll effects (change color to white)
 function Header() {
   return (
     <div className="font-medium flex justify-between items-center py-7 bg-dark-white-bg">
