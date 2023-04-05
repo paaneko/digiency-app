@@ -1,18 +1,15 @@
 import { BlogCardItem } from '@entities/blog/blog-card-item';
-import { blogCardList } from '@shared/ui-config';
+import { BlogPost } from '@shared/ui-types';
 
-export function BlogCardList() {
+type Props = {
+  blogCards: BlogPost[];
+};
+
+export function BlogCardList({ blogCards }: Props) {
   return (
-    <div>
-      {blogCardList.map((blog) => (
-        <BlogCardItem
-          img={blog.img}
-          label={blog.label}
-          time={blog.time}
-          author={blog.author}
-          comments_count={blog.comments_count}
-          title={blog.title}
-        />
+    <div className="">
+      {blogCards.map((blogPost) => (
+        <BlogCardItem key={blogPost._id} post={blogPost} />
       ))}
     </div>
   );
