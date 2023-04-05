@@ -12,7 +12,7 @@ const BlogHeroContext = createContext<BlogHeroContextProps>({
   setHeroTitle: (): string => '',
 });
 
-export function GlobalContextProvider({ children }: any) {
+export function BlogHeroContextProvider({ children }: any) {
   const [heroTitle, setHeroTitle] = useState('');
 
   return useMemo(

@@ -3,7 +3,6 @@ import { Poppins } from '@next/font/google';
 import Header from '@widgets/header';
 import { Footer } from '@widgets/footer';
 import Image from 'next/image';
-import { GlobalContextProvider } from '@widgets/blog-hero/model/useBlogHeroContext';
 import StyledComponentsRegistry from '@shared/lib/registry';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -26,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Header />
             </div>
           </header>
-          <GlobalContextProvider>{children}</GlobalContextProvider>
+          {children}
           <footer>
             <div className="bg-main-bg py-[60px]">
               <div className="container text-white">
