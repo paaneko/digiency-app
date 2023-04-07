@@ -1,20 +1,12 @@
 import { BlogHero } from '@widgets/blog-hero';
 import { BlogSideBar } from '@widgets/blog-sidebar';
-import { BlogCardList } from '@entities/blog/blog-card-list';
 import { previewData } from 'next/headers';
 import PreviewSuspense from '@shared/lib/PreviewSuspense';
-import { groq } from 'next-sanity';
-import PreviewBlogCardList from '@entities/blog/blog-card-list/PreviewBlogCardList';
+import PreviewBlogCardList from '@entities/blog/feed/ui/PreviewBlogCardList';
 import * as console from 'console';
+import blogListQuery from '@entities/blog/feed/model/query';
+import { BlogCardList } from '@entities/blog/feed/ui/FeedCardList';
 import client from '../../../src/shared/lib/sanity.client';
-
-const blogListQuery = groq`
-  *[_type=='post'] {
-    ...,
-    author->,
-    categories[]->
-  } | order(_createdAt desc)
-`;
 
 export default async function Blog() {
   if (previewData()) {

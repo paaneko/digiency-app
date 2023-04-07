@@ -1,7 +1,7 @@
 'use client';
 
 import usePreview from '@shared/lib/sanity.preview';
-import { BlogCardList } from '@entities/blog/blog-card-list/index';
+import { BlogCardList } from '@entities/blog/feed/ui/FeedCardList';
 
 type Props = {
   query: string;

@@ -2,6 +2,7 @@ import { BlogPost } from '@shared/ui-types';
 import Image from 'next/image';
 import { OrangeButtton } from '@shared/ui/buttons/orange-button';
 import urlFor from '@shared/lib/urlFor';
+import { ClientSideRoute } from '@shared/lib/ClientSideRoute';
 
 type Props = {
   post: BlogPost;
@@ -10,9 +11,11 @@ type Props = {
 export function BlogCardItem({ post }: Props) {
   return (
     <div className="w-[770px] bg-white rounded-lg pb-[60px]">
-      <div className="flex space-x-2 hover:scale-105 transition-transform duration-200 ease-out cursor-pointer">
-        <Image className="rounded-lg" width={770} height={400} src={urlFor(post.mainImage).url()} alt={post.title} />
-      </div>
+      <ClientSideRoute route={`/blog/p/${post.slug.current}`}>
+        <div className="flex space-x-2 hover:scale-105 transition-transform duration-200 ease-out cursor-pointer">
+          <Image className="rounded-lg" width={770} height={400} src={urlFor(post.mainImage).url()} alt={post.title} />
+        </div>
+      </ClientSideRoute>
       <div className="px-5">
         <div className="flex text-[10px] text-gray-pg justify-between py-10">
           <div className="flex">
@@ -36,9 +39,11 @@ export function BlogCardItem({ post }: Props) {
         </div>
         <div className="font-semibold text-[31px] mb-6">{post.title}</div>
         <div className="my-[25px] text-gray-pg line-clamp-3">{post.description}</div>
-        <div className="mb-5 mt-10">
-          <OrangeButtton label="Read More" />
-        </div>
+        <ClientSideRoute route={`/blog/p/${post.slug.current}`}>
+          <div className="mb-5 mt-10">
+            <OrangeButtton label="Read More" />
+          </div>
+        </ClientSideRoute>
       </div>
     </div>
   );

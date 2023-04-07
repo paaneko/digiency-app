@@ -1,5 +1,5 @@
-import { BlogCardItem } from '@entities/blog/blog-card-item';
 import { BlogPost } from '@shared/ui-types';
+import { BlogCardItem } from '@entities/blog/feed/ui/FeedCardItem';
 
 type Props = {
   blogCards: BlogPost[];
