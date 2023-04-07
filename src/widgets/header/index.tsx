@@ -1,4 +1,6 @@
 // TODO create onscroll effects (change color to white)
+import Link from 'next/link';
+
 function Header() {
   return (
     <div className="font-medium flex justify-between items-center py-7 bg-dark-white-bg">
@@ -6,11 +8,15 @@ function Header() {
         <p className="text-orange-main">Digi</p>ency
       </div>
       <div className="text-xl flex space-x-6">
-        <div className="hover:text-orange-main cursor-pointer duration-500">Home</div>
+        <Link href="/">
+          <div className="hover:text-orange-main cursor-pointer duration-500">Home</div>
+        </Link>
         <div className="hover:text-orange-main cursor-pointer duration-500">About Us</div>
         <div className="hover:text-orange-main cursor-pointer duration-500">Services</div>
         <div className="hover:text-orange-main cursor-pointer duration-500">Portfolio</div>
-        <div className="hover:text-orange-main cursor-pointer duration-500">Blog</div>
+        <Link href="/blog">
+          <div className="hover:text-orange-main cursor-pointer duration-500">Blog</div>
+        </Link>
         <div className="hover:text-orange-main cursor-pointer duration-500">Contact Us</div>
       </div>
       <div className="text-xl">
