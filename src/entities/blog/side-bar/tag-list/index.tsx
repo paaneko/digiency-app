@@ -1,5 +1,5 @@
 import { tagList } from '@shared/ui-config';
-import { TagItem } from '@entities/blog/tag-item';
+import { TagItem } from '@entities/blog/side-bar/tag-item';
 
 export function TagList() {
   return (

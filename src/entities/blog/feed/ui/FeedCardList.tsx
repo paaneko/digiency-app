@@ -1,18 +1,26 @@
+'use client';
+
 import { BlogPost } from '@shared/ui-types';
-import { BlogCardItem } from '@entities/blog/feed/ui/FeedCardItem';
+import { FeedCardItem } from '@entities/blog/feed/ui/FeedCardItem';
+import { useBlogHeroContext } from '@widgets/blog-hero/model/useBlogHeroContext';
+import { useEffect } from 'react';
 
 type Props = {
   blogCards: BlogPost[];
 };
 
-export function BlogCardList({ blogCards }: Props) {
+export function FeedCardList({ blogCards }: Props) {
+  const { setHeroTitle } = useBlogHeroContext();
+  useEffect(() => {
+    setHeroTitle('Our Blog');
+  }, [setHeroTitle]);
   return (
     <div className="">
       {blogCards.map((blogPost) => (
-        <BlogCardItem key={blogPost._id} post={blogPost} />
+        <FeedCardItem key={blogPost._id} post={blogPost} />
       ))}
     </div>
   );
 }
 
-export default BlogCardList;
+export default FeedCardList;

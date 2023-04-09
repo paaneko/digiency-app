@@ -1,14 +1,15 @@
 import { BlogPost } from '@shared/ui-types';
 import Image from 'next/image';
-import { OrangeButtton } from '@shared/ui/buttons/orange-button';
+import { OrangeButton } from '@shared/ui/buttons/orange-button';
 import urlFor from '@shared/lib/urlFor';
 import { ClientSideRoute } from '@shared/lib/ClientSideRoute';
+import { PostInfo } from '@shared/ui/post-info';
 
 type Props = {
   post: BlogPost;
 };
 
-export function BlogCardItem({ post }: Props) {
+export function FeedCardItem({ post }: Props) {
   return (
     <div className="w-[770px] bg-white rounded-lg pb-[60px]">
       <ClientSideRoute route={`/blog/p/${post.slug.current}`}>
@@ -17,31 +18,12 @@ export function BlogCardItem({ post }: Props) {
         </div>
       </ClientSideRoute>
       <div className="px-5">
-        <div className="flex text-[10px] text-gray-pg justify-between py-10">
-          <div className="flex">
-            <Image width={24} height={24} src="timer.svg" alt="timer-icon" />
-            <div className="ml-3.5 text-xl font-medium">
-              {new Date(post._createdAt).toLocaleDateString('en-US', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              })}
-            </div>
-          </div>
-          <div className="flex">
-            <Image width={24} height={24} src="person.svg" alt="person-icon" />
-            <div className="ml-3.5 text-xl font-medium">{post.author.name}</div>
-          </div>
-          <div className="flex">
-            <Image width={24} height={24} src="message-circle.svg" alt="message-circle-icon" />
-            <div className="ml-3.5 text-xl font-medium">{10} Comment</div>
-          </div>
-        </div>
+        <PostInfo createdAt={post._createdAt} authorName={post.author.name} commentCount={9} />
         <div className="font-semibold text-[31px] mb-6">{post.title}</div>
         <div className="my-[25px] text-gray-pg line-clamp-3">{post.description}</div>
         <ClientSideRoute route={`/blog/p/${post.slug.current}`}>
-          <div className="mb-5 mt-10">
-            <OrangeButtton label="Read More" />
+          <div className="mb-5 mt-10 flex justify-start">
+            <OrangeButton label="Read More" />
           </div>
         </ClientSideRoute>
       </div>
@@ -49,4 +31,4 @@ export function BlogCardItem({ post }: Props) {
   );
 }
 
-export default BlogCardItem;
+export default FeedCardItem;

@@ -14,7 +14,7 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
-      description: 'Short introduction *max 3 lines',
+      description: 'Short introduction *max 3 line',
     }),
     defineField({
       name: 'slug',

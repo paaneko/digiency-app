@@ -1,7 +1,7 @@
 'use client';
 
 import { latestPostList } from '@shared/ui-config';
-import { LatestPostItem } from '@entities/blog/latest-post-item';
+import { LatestPostItem } from '@entities/blog/side-bar/latest-post-item';
 
 // TODO remove suppression
 

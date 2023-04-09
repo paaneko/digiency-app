@@ -1,11 +1,8 @@
-import { BlogHero } from '@widgets/blog-hero';
-import { BlogSideBar } from '@widgets/blog-sidebar';
 import { previewData } from 'next/headers';
 import PreviewSuspense from '@shared/lib/PreviewSuspense';
 import PreviewBlogCardList from '@entities/blog/feed/ui/PreviewBlogCardList';
-import * as console from 'console';
 import blogListQuery from '@entities/blog/feed/model/query';
-import { BlogCardList } from '@entities/blog/feed/ui/FeedCardList';
+import { FeedCardList } from '@entities/blog/feed/ui/FeedCardList';
 import client from '../../../src/shared/lib/sanity.client';
 
 export default async function Blog() {
@@ -18,56 +15,17 @@ export default async function Blog() {
           </div>
         }
       >
-        <main>
-          <div className="">
-            <section className="bg-dark-white-bg">
-              <div className="pt-[220px] pb-[100px]">
-                <BlogHero />
-              </div>
-            </section>
-            <section>
-              <div className="container">
-                <div className="flex mt-[120px]">
-                  <div className="flex-1 bg-white">
-                    <PreviewBlogCardList query={blogListQuery} />
-                  </div>
-                  <div className="w-[370px]">
-                    <BlogSideBar />
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </main>
+        <PreviewBlogCardList query={blogListQuery} />
       </PreviewSuspense>
     );
   }
 
   const blogData = await client.fetch(blogListQuery);
 
-  console.log('Start Console log');
-  console.log(blogData);
   return (
-    <main>
-      <div className="">
-        <section className="bg-dark-white-bg">
-          <div className="pt-[220px] pb-[100px]">
-            <BlogHero />
-          </div>
-        </section>
-        <section>
-          <div className="container">
-            <div className="flex mt-[120px]">
-              <div className="flex-1 bg-white">
-                <BlogCardList blogCards={blogData} />
-              </div>
-              <div className="w-[370px]">
-                <BlogSideBar />
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+    <>
+      {/* <div className="py-96">{title}</div> */}
+      <FeedCardList blogCards={blogData} />
+    </>
   );
 }

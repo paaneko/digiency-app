@@ -1,5 +1,5 @@
 import { categoriesList } from '@shared/ui-config';
-import { CategoryItem } from '@entities/blog/categories-item';
+import { CategoryItem } from '@entities/blog/side-bar/categories-item';
 
 export function CategoriesList() {
   return (

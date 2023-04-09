@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { BlogCardType } from '@shared/ui-types';
-import { OrangeButtton } from '@shared/ui/buttons/orange-button';
+import { OrangeButton } from '@shared/ui/buttons/orange-button';
 
 export function BlogCardPreview({ img, author, label, time, comments_count, title }: BlogCardType) {
   return (
@@ -25,7 +25,7 @@ export function BlogCardPreview({ img, author, label, time, comments_count, titl
       </div>
       <div className="my-[25px] text-gray-pg">{title}</div>
       <div className="mb-5 mt-2">
-        <OrangeButtton label="Read More" />
+        <OrangeButton label="Read More" />
       </div>
     </div>
   );
