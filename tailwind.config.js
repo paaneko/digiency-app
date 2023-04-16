@@ -31,6 +31,7 @@ module.exports = {
       'dark-bg': '#18191A',
       'dark-v-1': '#242526',
       'dark-v-2': '#3A3B3C',
+      'error-red': '#FF0000',
     },
   },
   plugins: [],

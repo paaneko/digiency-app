@@ -16,7 +16,14 @@ export default async function Blog() {
           </div>
         }
       >
-        <PreviewBlogCardList query={blogListQuery} />
+        <div className="flex mt-[120px]">
+          <div className="flex-1 bg-white">
+            <PreviewBlogCardList query={blogListQuery} />
+          </div>
+          <div className="w-[370px]">
+            <BlogSideBar />
+          </div>
+        </div>
       </PreviewSuspense>
     );
   }

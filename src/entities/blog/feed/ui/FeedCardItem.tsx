@@ -1,3 +1,5 @@
+'use client';
+
 import { BlogPost } from '@shared/ui-types';
 import Image from 'next/image';
 import { OrangeButton } from '@shared/ui/buttons/orange-button';
