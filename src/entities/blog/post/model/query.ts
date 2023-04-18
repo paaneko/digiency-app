@@ -4,7 +4,10 @@ const query = groq`
   *[_type=='post' && slug.current == $slug][0]
   {
     ...,
-    author->,
+    author->{
+      ...,
+      authorTag->,
+    },
     categories[]->,
     "comments": *[
       _type == 'comments' &&

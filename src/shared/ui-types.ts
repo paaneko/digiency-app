@@ -80,6 +80,7 @@ interface Author extends Base {
   image: Image;
   name: string;
   slug: Slug;
+  authorTag: Tag;
 }
 
 interface Image {
@@ -113,6 +114,11 @@ interface Span {
 }
 
 interface Category extends Base {
+  description: string;
+  title: string;
+}
+
+interface Tag extends Base {
   description: string;
   title: string;
 }

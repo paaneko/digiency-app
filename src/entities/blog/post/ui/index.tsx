@@ -38,7 +38,7 @@ export function PostItem({ post }: Props) {
         </div>
         <div className="ml-12 ">
           <div className="mt-4 font-medium text-xl">{post.author.name}</div>
-          <div className="mt-3 text-orange-main">Graphic Designer</div>
+          <div className="mt-3 text-orange-main">{post.author.authorTag.title}</div>
           <div className="mt-2.5 text-gray-pg">
             <PortableText value={post.author.bio} components={RichTextComponents} />
           </div>
