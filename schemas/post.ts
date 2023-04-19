@@ -34,6 +34,7 @@ export default defineType({
       type: 'reference',
       to: { type: 'author' },
       validation: (Rule) => Rule.required(),
+      weak: true,
     }),
     defineField({
       name: 'mainImage',
@@ -50,6 +51,7 @@ export default defineType({
       type: 'reference',
       to: { type: 'category' },
       validation: (Rule) => Rule.required(),
+      weak: true,
     }),
     defineField({
       name: 'publishedAt',

@@ -31,6 +31,7 @@ export default defineType({
       title: 'Post',
       type: 'reference',
       to: [{ type: 'post' }],
+      weak: true,
     }),
   ],
 });

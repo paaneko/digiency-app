@@ -35,6 +35,7 @@ export default defineType({
       title: 'Author Tag',
       type: 'reference',
       to: [{ type: 'tag' }],
+      weak: true,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
