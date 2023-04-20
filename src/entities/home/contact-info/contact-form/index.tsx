@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import OrangeButton from '@shared/ui/buttons/orange-button';
+import { OrangeButton } from '@shared/ui/buttons/orange-button';
 
 export function ContactUsForm() {
   return (

@@ -12,11 +12,15 @@ type Props = {
 
 async function Post({ params: { slug } }: Props) {
   const post: BlogPost = await client.fetch(query, { slug });
+  // TODO FIXME normal loading
+  if (!post) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
       <PostItem post={post} />
-      <PostComment postId={post._id} comments={post.comments} />
+      {post && <PostComment postId={post._id} comments={post.comments} />}
     </>
   );
 }

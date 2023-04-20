@@ -29,12 +29,18 @@ export default async function Blog() {
   }
 
   const blogData = await client.fetch(blogListQuery);
+  // TODO FIXME normal loading
+  if (!blogData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="flex mt-[120px]">
-      <div className="flex-1 bg-white">
-        <FeedCardList blogCards={blogData} />
-      </div>
+      {blogData && (
+        <div className="flex-1 bg-white">
+          <FeedCardList blogCards={blogData} />
+        </div>
+      )}
       <div className="w-[370px]">
         <BlogSideBar />
       </div>
