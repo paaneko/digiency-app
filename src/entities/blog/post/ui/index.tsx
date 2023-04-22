@@ -25,7 +25,7 @@ export function PostItem({ post }: Props) {
         <Image className="object-contain" fill src={urlFor(post.mainImage).url()} alt={post.title} />
       </div>
       <div className="px-24">
-        <PostInfo createdAt={post._createdAt} authorName={post.author.name} commentCount={9} />
+        <PostInfo createdAt={post._createdAt} authorName={post.author?.name ?? post.team?.name} commentCount={9} />
       </div>
       <div className="mx-8 text-gray-pg">
         <PortableText value={post.body} components={RichTextComponents} />
@@ -33,14 +33,22 @@ export function PostItem({ post }: Props) {
       <div className="flex p-5 bg-dark-white-bg mt-20">
         <div className="w-20 h-20">
           <div className="object-contain relative w-[100px] h-[100px]">
-            <Image fill src={urlFor(post.author.image).url()} alt={post.author.name} className="rounded-full" />
+            <Image
+              fill
+              src={urlFor(post.author?.image ?? post.team?.image).url()}
+              alt={post.author ? post.author.name : post.team?.name || ''}
+              className="rounded-full"
+            />
           </div>
         </div>
         <div className="ml-12 ">
-          <div className="mt-4 font-medium text-xl">{post.author.name}</div>
-          <div className="mt-3 text-orange-main">{post.author.authorTag.title}</div>
+          <div className="mt-4 font-medium text-xl">{post.author?.name ?? post.team?.name}</div>
+          <div className="mt-3 text-orange-main">{post.author?.authorTag.title ?? post.team?.authorTag.title}</div>
           <div className="mt-2.5 text-gray-pg">
-            <PortableText value={post.author.bio} components={RichTextComponents} />
+            <PortableText
+              value={post.author ? post.author.bio : post.team?.bio || []}
+              components={RichTextComponents}
+            />
           </div>
         </div>
       </div>
