@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 type PostInfoProps = {
   createdAt: string;
-  authorName: string;
+  authorName: string | undefined;
   commentCount: number;
 };
 

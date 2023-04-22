@@ -1,10 +1,11 @@
 import { groq } from 'next-sanity';
 
 const blogListQuery = groq`
-  *[_type=='post'] {
+  *[(_type == 'post' || _type == 'projects')] | order(_createdAt desc) {
     ...,
     author->,
-    categories[]->
-  } | order(_createdAt desc) 
+    categories->,
+    team->,
+  }
 `;
 export default blogListQuery;

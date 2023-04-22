@@ -65,7 +65,8 @@ type Base = {
 };
 
 export interface BlogPost extends Base {
-  author: Author;
+  author?: Author | null;
+  team?: Team | null;
   body: Block[];
   categories: Category;
   mainImage: Image;
@@ -79,6 +80,15 @@ interface Author extends Base {
   bio: Block[];
   image: Image;
   name: string;
+  slug: Slug;
+  authorTag: Tag;
+}
+
+interface Team extends Base {
+  bio: Block[];
+  image: Image;
+  name: string;
+  members: Author[];
   slug: Slug;
   authorTag: Tag;
 }

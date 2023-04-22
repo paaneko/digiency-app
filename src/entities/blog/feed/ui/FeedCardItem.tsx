@@ -20,7 +20,11 @@ export function FeedCardItem({ post }: Props) {
         </div>
       </ClientSideRoute>
       <div className="px-5">
-        <PostInfo createdAt={post._createdAt} authorName={post.author.name} commentCount={9} />
+        <PostInfo
+          createdAt={post._createdAt}
+          authorName={post.author ? post.author?.name : post.team?.name}
+          commentCount={9}
+        />
         <div className="font-semibold text-[31px] mb-6">{post.title}</div>
         <div className="my-[25px] text-gray-pg line-clamp-3">{post.description}</div>
         <ClientSideRoute route={`/blog/p/${post.slug.current}`}>
