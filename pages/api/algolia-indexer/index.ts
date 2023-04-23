@@ -9,7 +9,7 @@ export const algolia = algoliasearch(
   process.env.NEXT_PUBLIC_ALGOLIA_ADMIN_KEY!
 );
 
-export const POST_PROJECTION = `
+const POST_PROJECTION = `
 {
   _type,
   _rev,
@@ -26,6 +26,33 @@ export const POST_PROJECTION = `
       title,
         _id,
     },
+  },
+  author->{
+    name,
+      _id
+  },
+}
+`;
+
+const PROJECT_PROJECTION = `
+{
+  _type,
+  _rev,
+  "objectID": _id,
+  _createdAt,
+  title,
+  description,
+  categories->{
+    title,
+    _id,
+  },
+  "tags": team->{
+      name,
+      _id,
+      tag->{
+        _id,
+        title,
+      },
   },
   author->{
     name,
@@ -67,6 +94,10 @@ const vercelHandler = async (req: NextApiRequest, res: NextApiResponse) => {
       post: {
         index,
         projection: POST_PROJECTION,
+      },
+      project: {
+        index,
+        projection: PROJECT_PROJECTION,
       },
     },
     (document) => document

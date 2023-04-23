@@ -9,6 +9,7 @@ export default defineType({
       name: 'name',
       title: 'Name',
       type: 'string',
+      readOnly: true,
     }),
     defineField({
       name: 'approved',
@@ -20,18 +21,20 @@ export default defineType({
       name: 'email',
       title: 'Email',
       type: 'string',
+      readOnly: true,
     }),
     defineField({
       name: 'body',
       title: 'Body',
       type: 'text',
+      readOnly: true,
     }),
     defineField({
       name: 'post',
       title: 'Post',
       type: 'reference',
       weak: true,
-      to: [{ type: 'post' }],
+      to: [{ type: 'post' }, { type: 'project' }],
     }),
   ],
 });

@@ -12,7 +12,7 @@ function PostCommentItem({ commentItem }: PostCommentItemProps) {
     <div className="flex py-5">
       <div className="w-[80px] h-[80px] flex-shrink-0 mr-5">
         <div className="object-contain relative w-full h-full">
-          <Image fill className="rounded-md" src="/main-blog-card-preview-1.png" alt="latest-post-avatar" />
+          <Image fill className="rounded-md" src="/comment_image.png" alt="latest-post-avatar" />
         </div>
       </div>
       <div className="flex-grow">

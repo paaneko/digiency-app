@@ -90,7 +90,7 @@ interface Team extends Base {
   name: string;
   members: Author[];
   slug: Slug;
-  authorTag: Tag;
+  tag: Tag;
 }
 
 interface Image {

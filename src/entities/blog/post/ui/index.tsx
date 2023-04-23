@@ -43,7 +43,7 @@ export function PostItem({ post }: Props) {
         </div>
         <div className="ml-12 ">
           <div className="mt-4 font-medium text-xl">{post.author?.name ?? post.team?.name}</div>
-          <div className="mt-3 text-orange-main">{post.author?.authorTag.title ?? post.team?.authorTag.title}</div>
+          <div className="mt-3 text-orange-main">{post.author?.authorTag.title ?? post.team?.tag.title}</div>
           <div className="mt-2.5 text-gray-pg">
             <PortableText
               value={post.author ? post.author.bio : post.team?.bio || []}
