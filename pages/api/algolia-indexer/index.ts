@@ -11,52 +11,46 @@ export const algolia = algoliasearch(
 
 const POST_PROJECTION = `
 {
-  _type,
-  _rev,
-  "objectID": _id,
-  _createdAt,
+  "createdAt": _createdAt,
   title,
   description,
+  "slug": slug.current,
+  "mainImage": mainImage.asset._ref,
   categories->{
     title,
     _id,
   },
-  "tags": author->{
-    authorTag->{
-      title,
-        _id,
-    },
-  },
   author->{
     name,
-      _id
+    slug,
+    _id,
+  },
+  "tag": author->authorTag->{
+    title,
+    _id,
   },
 }
 `;
 
 const PROJECT_PROJECTION = `
 {
-  _type,
-  _rev,
-  "objectID": _id,
-  _createdAt,
+  "createdAt": _createdAt,
   title,
   description,
+  "slug": slug.current,
+  "mainImage": mainImage.asset._ref,
   categories->{
     title,
     _id,
   },
-  "tags": team->{
-      name,
-      _id,
-      tag->{
-        _id,
-        title,
-      },
-  },
-  author->{
+  "author": team->{
+    slug,
     name,
-      _id
+    _id,
+  },
+  "tag": team->tag->{
+      title,
+      _id,
   },
 }
 `;

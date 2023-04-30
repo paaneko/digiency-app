@@ -25,7 +25,12 @@ export function PostItem({ post }: Props) {
         <Image className="object-contain" fill src={urlFor(post.mainImage).url()} alt={post.title} />
       </div>
       <div className="px-24">
-        <PostInfo createdAt={post._createdAt} authorName={post.author?.name ?? post.team?.name} commentCount={9} />
+        <PostInfo
+          createdAt={post._createdAt}
+          authorName={post.author?.name ?? post.team?.name}
+          authorSlug={post.author?.slug}
+          commentCount={9}
+        />
       </div>
       <div className="mx-8 text-gray-pg">
         <PortableText value={post.body} components={RichTextComponents} />

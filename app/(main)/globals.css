@@ -8,6 +8,47 @@
   position: relative;
 }
 
+.ais-SearchBox {
+  position: relative;
+}
+
 .shadow-div {
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+input[type="search"]:focus {
+  outline: none;
+  border: none;
+}
+.ais-SearchBox-submit {
+  position: absolute;
+  top: 24px;
+  left: 14px;
+}
+
+.ais-SearchBox-reset {
+  position: absolute;
+  top: 24px;
+  right: 14px;
+}
+
+.ais-SearchBox-submitIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.ais-SearchBox-resetIcon {
+  width: 1rem;
+  height: 1rem;
+}
+.ais-SearchBox-input {
+  width: 100%;
+  border: none;
+  padding: 20px 40px;
+  font-size: 16px;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
 }
