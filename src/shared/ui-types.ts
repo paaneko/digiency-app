@@ -56,7 +56,7 @@ export type CategoryItemType = {
 export type TagItemType = {
   label: string;
 };
-type Base = {
+export type Base = {
   _createdAt: string;
   _id: string;
   _ref: string;
@@ -76,7 +76,7 @@ export interface BlogPost extends Base {
   comments: Comment[];
 }
 
-interface Author extends Base {
+export interface Author extends Base {
   bio: Block[];
   image: Image;
   name: string;

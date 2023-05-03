@@ -8,6 +8,7 @@ import { PortableText } from '@portabletext/react';
 import RichTextComponents from '@shared/lib/RichTextComponents';
 import { useBlogHeroContext } from '@widgets/blog-hero/model/useBlogHeroContext';
 import { useEffect } from 'react';
+import { ClientSideRoute } from '@shared/lib/ClientSideRoute';
 
 type Props = {
   post: BlogPost;
@@ -47,7 +48,13 @@ export function PostItem({ post }: Props) {
           </div>
         </div>
         <div className="ml-12 ">
-          <div className="mt-4 font-medium text-xl">{post.author?.name ?? post.team?.name}</div>
+          <ClientSideRoute
+            route={`/blog/${post.author?.name ? 'author' : 'team'}/${
+              post.author?.slug.current ?? post.team?.slug.current
+            }`}
+          >
+            <div className="mt-4 font-medium text-xl">{post.author?.name ?? post.team?.name}</div>
+          </ClientSideRoute>
           <div className="mt-3 text-orange-main">{post.author?.authorTag.title ?? post.team?.tag.title}</div>
           <div className="mt-2.5 text-gray-pg">
             <PortableText
