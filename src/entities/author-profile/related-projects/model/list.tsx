@@ -1,15 +1,15 @@
 'use client';
 
-import useRelatedQuery from '@entities/author-profile/author-related/api/useRelatedQuery';
-import AuthorRelatedItem from '@entities/author-profile/author-related/ui/AuthorRelatedItem';
-import { relatedProjectsQuery } from '@entities/author-profile/author-related/model/query';
+import RelatedItem from '@shared/ui/RelatedItem';
+import useRelatedQuery from '@shared/api/useRelatedQuery';
+import authorRelatedProjectsQuery from '@entities/author-profile/related-projects/model/query';
 
 type AuthorRelatedProjectsProps = {
   slug: string;
 };
 
 function AuthorRelatedProjects({ slug }: AuthorRelatedProjectsProps) {
-  const { data, isLoading, error } = useRelatedQuery(relatedProjectsQuery, slug);
+  const { data, isLoading, error } = useRelatedQuery(authorRelatedProjectsQuery, slug);
   if (isLoading) {
     return <div>Loading ...</div>;
   }
@@ -20,7 +20,7 @@ function AuthorRelatedProjects({ slug }: AuthorRelatedProjectsProps) {
     <div>
       <div className="font-semibold text-3xl">Also take part in this projects: </div>
       {data?.map((post) => (
-        <AuthorRelatedItem item={post} />
+        <RelatedItem item={post} />
       ))}
     </div>
   );

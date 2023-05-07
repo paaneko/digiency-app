@@ -84,7 +84,7 @@ export interface Author extends Base {
   authorTag: Tag;
 }
 
-interface Team extends Base {
+export interface Team extends Base {
   bio: Block[];
   image: Image;
   name: string;

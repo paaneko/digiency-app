@@ -4,7 +4,7 @@ import sanityClient from '@shared/lib/sanity.client';
 
 export default function useRelatedQuery(
   query: string,
-  authorSlug: string
+  slug: string
 ): {
   data: AuthorRelatedItemType[] | null;
   isLoading: boolean;
@@ -18,7 +18,7 @@ export default function useRelatedQuery(
     async function fetchData() {
       setIsLoading(true);
       try {
-        const result = await sanityClient.fetch<AuthorRelatedItemType[]>(query, { authorSlug });
+        const result = await sanityClient.fetch<AuthorRelatedItemType[]>(query, { slug });
         setData(result);
       } catch (err: any) {
         setError(err);
@@ -27,7 +27,7 @@ export default function useRelatedQuery(
     }
 
     fetchData();
-  }, [authorSlug, query]);
+  }, [slug, query]);
 
   return { data, isLoading, error };
 }

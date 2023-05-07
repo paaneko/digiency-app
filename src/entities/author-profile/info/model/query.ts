@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 
 const AuthorProfileInfoQuery = groq`
-*[_type == 'author' && slug.current==$authorSlug][0] {
+*[_type == 'author' && slug.current==$authorSlug && !(_id in path("drafts.**"))][0] {
   ...,
   "authorTag": authorTag->,
   "relatedPosts": *[

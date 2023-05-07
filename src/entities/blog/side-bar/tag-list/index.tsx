@@ -29,7 +29,13 @@ function CategoryFilter(props: any) {
                 type="checkbox"
                 value={item.value}
                 checked={item.isRefined}
-                onChange={() => refine(item.value)}
+                onChange={() => {
+                  refine(item.value);
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                  });
+                }}
               />
               <span
                 className={`text-gray-pg font-medium text-xl ${

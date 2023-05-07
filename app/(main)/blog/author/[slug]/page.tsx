@@ -1,6 +1,6 @@
 import AuthorItem from '@entities/author-profile/info/ui';
-import AuthorRelatedPosts from '@entities/author-profile/author-related/model/AuthorRelatedPosts';
-import AuthorRelatedProjects from '@entities/author-profile/author-related/model/AuthorRelatedProjects';
+import AuthorRelatedPosts from '@entities/author-profile/related-posts/model/list';
+import AuthorRelatedProjects from '@entities/author-profile/related-projects/model/list';
 
 type Props = {
   params: {

@@ -7,13 +7,13 @@ type AuthorRelatedItemProps = {
   item: AuthorRelatedItemType;
 };
 
-function AuthorRelatedItem({ item }: AuthorRelatedItemProps) {
+function RelatedItem({ item }: AuthorRelatedItemProps) {
   return (
     <div className="mt-12 max-w-[520px] flex items-center justify-between">
       <div>
         <div>
-          <span className="font-medium">{item.author.name}</span>
-          in <span className="font-medium text-orange-main ">{item.categories.title}</span>
+          <span className="font-medium">{item.author.name}</span> in{' '}
+          <span className="font-medium text-orange-main ">{item.categories.title}</span>
         </div>
         <ClientSideRoute route={`/blog/p/${item.slug}`}>
           <div className="font-semibold mt-2 line-clamp-2">{item.title}</div>
@@ -46,4 +46,4 @@ function AuthorRelatedItem({ item }: AuthorRelatedItemProps) {
   );
 }
 
-export default AuthorRelatedItem;
+export default RelatedItem;
