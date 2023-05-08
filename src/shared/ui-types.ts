@@ -108,7 +108,7 @@ export interface Slug {
   current: string;
 }
 
-interface Block {
+export interface Block {
   _key: string;
   _type: 'block';
   children: Span[];

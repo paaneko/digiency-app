@@ -6,7 +6,7 @@ import TeamProfileInfoType from '@entities/team-profile/info/model/types';
 
 export default function useTeamProfileInfoQuery(
   query: string,
-  authorSlug: string
+  slug: string
 ): {
   data: TeamProfileInfoType;
   isLoading: boolean;
@@ -19,7 +19,7 @@ export default function useTeamProfileInfoQuery(
   useEffect(() => {
     async function fetchData() {
       try {
-        const result = await sanityClient.fetch<TeamProfileInfoType>(query, { authorSlug });
+        const result = await sanityClient.fetch<TeamProfileInfoType>(query, { slug });
         setIsLoading(false);
         setData(result);
       } catch (err: any) {
@@ -29,7 +29,7 @@ export default function useTeamProfileInfoQuery(
     }
 
     fetchData();
-  }, [authorSlug, query]);
+  }, [slug, query]);
 
   return { data, isLoading, error };
 }

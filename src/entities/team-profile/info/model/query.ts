@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 
 const TeamProfileInfoQuery = groq`
-*[_type == 'team' && slug.current=="team-beta"][0] {
+*[_type == 'team' && slug.current==$slug][0] {
   bio,
   image,
   name,
@@ -9,11 +9,12 @@ const TeamProfileInfoQuery = groq`
   tag,
   members[]->{
   slug,
-    bio,
-    name,
-    authorTag->{
-      title,
-    },
+  bio,
+  image,
+  name,
+  authorTag->{
+    title,
+  },
   },
 }
 `;
