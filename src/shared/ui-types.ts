@@ -93,7 +93,7 @@ export interface Team extends Base {
   tag: Tag;
 }
 
-interface Image {
+export interface Image {
   _type: 'image';
   asset: Reference;
 }

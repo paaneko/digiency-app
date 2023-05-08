@@ -4,10 +4,10 @@ import { OurServices } from '@entities/home/ui/our-services';
 import Image from 'next/image';
 import { HomePortfolioProjectsType } from '@shared/ui-types';
 import { PortfolioProjects } from '@entities/home/ui/portfolio-projects';
-import { Rewiew } from '@entities/home/ui/our-testimonial/rewiew';
 import { BlogCardPreview } from '@entities/home/our-blog/blog-card-preview';
 import { ContactCards } from '@entities/home/contact-info/contact-cards';
 import { ContactUsForm } from '@entities/home/contact-info/contact-form';
+import ReviewList from '@entities/home/our-testimonial/model/list';
 
 export default function Home() {
   return (
@@ -114,11 +114,7 @@ export default function Home() {
                   <div className="font-semibold text-[39px] leading-[58px] ">What Our Client Saying</div>
                 </div>
               </div>
-              <div className="flex justify-between mt-[60px]">
-                <Rewiew />
-                <Rewiew />
-                <Rewiew />
-              </div>
+              <ReviewList />
             </div>
           </div>
         </section>
