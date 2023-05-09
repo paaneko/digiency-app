@@ -1,13 +1,13 @@
 import { HeroOne } from '@entities/home/hero';
-import { contactInfoConfig, portfolioProjectsConfig, servicesConfig, homeBlogCardList } from '@shared/ui-config';
+import { contactInfoConfig, portfolioProjectsConfig, servicesConfig } from '@shared/ui-config';
 import { OurServices } from '@entities/home/ui/our-services';
 import Image from 'next/image';
 import { HomePortfolioProjectsType } from '@shared/ui-types';
 import { PortfolioProjects } from '@entities/home/ui/portfolio-projects';
-import { BlogCardPreview } from '@entities/home/our-blog/blog-card-preview';
-import { ContactCards } from '@entities/home/contact-info/contact-cards';
-import { ContactUsForm } from '@entities/home/contact-info/contact-form';
+import { ContactCards } from '@entities/home/contact-cards';
+import { ContactUsForm } from '@features/contact-us/ui';
 import ReviewList from '@entities/home/our-testimonial/model/list';
+import OurBlogList from '@entities/home/our-blog/model/list';
 
 export default function Home() {
   return (
@@ -203,18 +203,7 @@ export default function Home() {
                   <div className="font-semibold text-[39px] leading-[58px] ">Every Singel Update From Here</div>
                 </div>
               </div>
-              <div className="flex justify-between mt-[60px]">
-                {homeBlogCardList.map((card) => (
-                  <BlogCardPreview
-                    img={card.img}
-                    label={card.label}
-                    time={card.time}
-                    author={card.author}
-                    comments_count={card.comments_count}
-                    title={card.title}
-                  />
-                ))}
-              </div>
+              <OurBlogList />
             </div>
           </div>
         </section>

@@ -8,6 +8,19 @@ import team from './team';
 import projects from './project';
 import homeSettings from './homeSettings';
 import review from './review';
+import contactUs from './contactUs';
 
 // eslint-disable-next-line import/prefer-default-export
-export const schemaTypes = [post, projects, author, team, category, tag, blockContent, comments, homeSettings, review];
+export const schemaTypes = [
+  post,
+  projects,
+  author,
+  team,
+  category,
+  tag,
+  blockContent,
+  comments,
+  homeSettings,
+  review,
+  contactUs,
+];
