@@ -5,6 +5,7 @@ const ourMemberListQuery = groq`
   _id,
   image,
   "authorTag": authorTag->title,
+  bio,
   name,
   slug,
 }

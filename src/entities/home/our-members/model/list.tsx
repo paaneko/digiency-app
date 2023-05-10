@@ -51,7 +51,7 @@ function OurMemberList() {
     setPage([slide + newDirection, newDirection]);
   };
   return (
-    <div className="relative flex justify-center items-center h-[350px]">
+    <div className="relative flex justify-center items-center mt-12 h-[350px] md:h-[450px] xl:h-[550px]">
       <AnimatePresence initial={false} custom={direction}>
         {data
           .filter((_, i) => i === itemIndex)
@@ -78,14 +78,20 @@ function OurMemberList() {
                 }
               }}
             >
-              <OurMemberItem name={item.name} authorTag={item.authorTag} slug={item.slug} image={item.image} />
+              <OurMemberItem
+                name={item.name}
+                authorTag={item.authorTag}
+                slug={item.slug}
+                bio={item.bio}
+                image={item.image}
+              />
             </motion.div>
           ))}
       </AnimatePresence>
       <motion.div
         whileHover={{ scale: 1.2, transition: { duration: 0.5 } }}
         whileTap={{ scale: 0.9 }}
-        className="absolute top-[calc(50%-24px)] left-0 cursor-pointer"
+        className="hidden md:absolute top-[calc(50%-24px)] left-0 cursor-pointer"
         onClick={() => paginate(1)}
       >
         <svg
@@ -94,7 +100,7 @@ function OurMemberList() {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-12 h-12"
+          className="w-12 h-12 fill-orange-main"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
         </svg>
@@ -102,7 +108,7 @@ function OurMemberList() {
       <motion.div
         whileHover={{ scale: 1.2, transition: { duration: 0.5 } }}
         whileTap={{ scale: 0.9 }}
-        className="absolute top-[calc(50%-24px)] right-0 cursor-pointer"
+        className="hidden md:absolute top-[calc(50%-24px)] right-0 cursor-pointer"
         onClick={() => paginate(-1)}
       >
         <svg
@@ -111,7 +117,7 @@ function OurMemberList() {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-12 h-12"
+          className="w-12 h-12 fill-orange-main"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>

@@ -73,7 +73,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="my-[120px]">
+          <div className="my-[60px] md:my-[120px]">
             <div className="container">
               <div className="text-orange-main flex justify-center items-center">
                 <hr className="bg-orange-main w-8" />
