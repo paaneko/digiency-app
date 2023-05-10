@@ -92,49 +92,21 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* <section> */}
-        {/*  <div className="my-[120px]"> */}
-        {/*    <div className="container"> */}
-        {/*      <div className="text-orange-main flex items-center "> */}
-        {/*        <div className="mr-2 font-normal mb-3">Portfolio</div> */}
-        {/*        <hr className="bg-orange-main w-8" /> */}
-        {/*      </div> */}
-        {/*      <div className="flex items-center justify-between mb-3"> */}
-        {/*        <div className="font-semibold text-[39px] leading-[58px] ">Our Recent Project</div> */}
-        {/*        <div className="flex space-x-4 font-medium text-gray-pg"> */}
-        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">All</div> */}
-        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">UX Design</div> */}
-        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">Web Design</div> */}
-        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">App Development</div> */}
-        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">Game Design</div> */}
-        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">Graphic Design</div> */}
-        {/*        </div> */}
-        {/*      </div> */}
-        {/*      <div className="flex flex-wrap justify-between"> */}
-        {/*        {portfolioProjectsConfig.map((portfolioProject: HomePortfolioProjectsType) => ( */}
-        {/*          <PortfolioProjects */}
-        {/*            key={portfolioProject.label} */}
-        {/*            img={portfolioProject.img} */}
-        {/*            label={portfolioProject.label} */}
-        {/*          /> */}
-        {/*        ))} */}
-        {/*      </div> */}
-        {/*    </div> */}
-        {/*  </div> */}
-        {/* </section> */}
         <section className="bg-dark-white-bg">
-          <div className="py-[120px]">
+          <div className="py-[60px] md:py-[120px]">
             <div className="container flex-row justify-center">
               <div className="flex justify-center">
                 <div className="">
                   <div className="flex justify-center">
                     <div className="text-orange-main flex items-center">
                       <hr className="bg-orange-main w-8" />
-                      <div className="mx-2 font-normal text-center">Our Testimonial</div>
+                      <div className="mx-2 font-normal text-center text-sm md:text-base">Our Testimonial</div>
                       <hr className="bg-orange-main w-8" />
                     </div>
                   </div>
-                  <div className="font-semibold text-[39px] leading-[58px] ">What Our Client Saying</div>
+                  <div className="mb-3 mt-2 text-2xl text-center font-semibold md:text-3xl xl:text-4xl xl:leading-[58px]">
+                    What Our <span className="text-orange-main">Clients</span> Saying
+                  </div>
                 </div>
               </div>
               <ReviewList />
@@ -142,7 +114,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="container flex justify-between py-[120px]">
+          <div className="container flex justify-between my-[60px] md:my-[120px]">
             <div className="max-w-[544px] mr-4">
               <div className="text-orange-main flex items-center ">
                 <div className="mr-2 font-normal">Our Capabilities</div>
