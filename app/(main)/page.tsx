@@ -7,6 +7,7 @@ import { ContactUsForm } from '@features/contact-us/ui';
 import ReviewList from '@entities/home/our-testimonial/model/list';
 import OurBlogList from '@entities/home/our-blog/model/list';
 import OurMemberList from '@entities/home/our-members/model/list';
+import OurCapabilitiesBar from '@entities/home/our-capabilities-bar/ui';
 
 export default function Home() {
   return (
@@ -114,73 +115,77 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="container flex justify-between my-[60px] md:my-[120px]">
-            <div className="max-w-[544px] mr-4">
-              <div className="text-orange-main flex items-center ">
-                <div className="mr-2 font-normal">Our Capabilities</div>
-                <hr className="bg-orange-main w-8" />
-              </div>
-              <div className="font-semibold text-4xl mt-2 mb-6 leading-[58px] ">
-                Forward Thinking Team Of Designers & Developers
-              </div>
-              <div className="mb-6 text-gray-pg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus ut nisi, amet rhoncus volutpat neque.
-                Ipsum in aliquam eget vitae purus felis eget massa felis. Eu mattis in malesuada facilisi proin vel.
-              </div>
-              <div className="flex justify-between">
-                <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
-                  <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">80%</div>
-                  <div className="text-center font-light text-xs">Softwer Development</div>
+          <div className="container my-[60px] md:my-[120px]">
+            <div className="flex flex-col-reverse md:flex-row justify-center md:justify-between items-center">
+              <div className="md:max-w-[544px] md:mr-4 ">
+                <div className="m-5 md:m-0 flex justify-center md:justify-start text-orange-main flex items-center ">
+                  <div className="mr-2 font-normal text-sm md:text-base">Our Capabilities</div>
+                  <hr className="hidden md:block bg-orange-main w-8" />
                 </div>
-                <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
-                  <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">90%</div>
-                  <div className="text-center font-light text-xs">Graphic Design</div>
+                <div className="flex justify-center md:inline-flex">
+                  <span className="m-0 w-[280px] md:w-[390px] xl:w-[478px] text-center md:text-left md:mt-4 md:mb-2 text-2xl font-semibold md:text-3xl xl:text-4xl xl:leading-[58px]">
+                    Forward Thinking Team Of <span className="text-orange-main">Designers</span> &{' '}
+                    <span className="text-orange-main">Developers</span>
+                  </span>
                 </div>
-                <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
-                  <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">85%</div>
-                  <div className="text-center font-light text-xs">Game Design</div>
+                <div className="mt-5 my-5 md:m-0 flex justify-center md:block">
+                  <div className="text-center inline-block mb-0 md:mb-6 text-gray-pg w-[290px] md:w-[340px] xl:w-[544px]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cursus ut nisi, amet rhoncus volutpat
+                    neque. Ipsum in aliquam eget vitae purus felis eget massa felis. Eu mattis in malesuada facilisi
+                    proin vel.
+                  </div>
                 </div>
-                <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
-                  <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">100%</div>
-                  <div className="text-center font-light text-xs">
-                    Web <br /> Development
+                <div className="hidden xl:flex justify-between">
+                  <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
+                    <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">80%</div>
+                    <div className="text-center font-light text-xs">Softwer Development</div>
+                  </div>
+                  <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
+                    <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">90%</div>
+                    <div className="text-center font-light text-xs">Graphic Design</div>
+                  </div>
+                  <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
+                    <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">85%</div>
+                    <div className="text-center font-light text-xs">Game Design</div>
+                  </div>
+                  <div className="shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
+                    <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">100%</div>
+                    <div className="text-center font-light text-xs">
+                      Web <br /> Development
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <Image className="inline-flex" width={620} height={387} src="our-capabilities.svg" alt="about-us" />
-          </div>
-          <div className="container text-white bg-orange-main rounded-lg py-[70px] mb-[120px]">
-            <div className="flex divide-x-[3px] divide-slate-700 ">
-              <div className="pl-[47px] pr-[65px]">
-                <div className="flex justify-center mb-2.5">
-                  <Image width={50} height={50} src="our-cap-man.svg" alt="our-cap-man" />
-                </div>
-                <div className="font-semibold text-5xl text-center mb-1 mx-8">120</div>
-                <div className="text-xl font-medium text-center">Top Experts</div>
-              </div>
-              <div className="px-[65px]">
-                <div className="flex justify-center mb-2.5">
-                  <Image width={50} height={50} src="our-cap-target.svg" alt="our-cap-target" />
-                </div>
-                <div className="font-semibold text-5xl text-center mb-1 mx-8">500</div>
-                <div className="text-xl font-medium text-center">Strategies</div>
-              </div>
-              <div className="px-[65px]">
-                <div className="flex justify-center mb-2.5">
-                  <Image width={50} height={50} src="our-cap-analysis.svg" alt="our-cap-analysis" />
-                </div>
-                <div className="font-semibold text-5xl text-center mb-1 mx-8">347</div>
-                <div className="text-xl font-medium text-center">Great Results</div>
-              </div>
-              <div className="pl-[65px] pr-[48px]">
-                <div className="flex justify-center mb-2.5">
-                  <Image width={50} height={50} src="our-cap-data-analytics.svg" alt="our-cap-data-analysis" />
-                </div>
-                <div className="font-semibold text-5xl text-center mb-1 mx-8">120</div>
-                <div className="text-xl font-medium text-center">Hight Rankings</div>
+              <div className="relative w-[300px] h-[200px] md:w-[335px] md:h-[225px] xl:w-[620px] xl:h-[387px]">
+                <Image
+                  className="inline-flex object-cover object-left"
+                  fill
+                  src="our-capabilities.svg"
+                  alt="our-capabilities"
+                />
               </div>
             </div>
+            <div className="flex flex-wrap xl:hidden justify-around container p-0 md:px-12 md:px-20">
+              <div className="mt-6 mx-3 md:mx-0 shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
+                <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">80%</div>
+                <div className="text-center font-light text-xs">Softwer Development</div>
+              </div>
+              <div className="mt-6 mx-3 md:mx-0 shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
+                <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">90%</div>
+                <div className="text-center font-light text-xs">Graphic Design</div>
+              </div>
+              <div className="mt-6 mx-3 md:mx-0 shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
+                <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">85%</div>
+                <div className="text-center font-light text-xs">Game Design</div>
+              </div>
+              <div className="mt-6 mx-3 md:mx-0 shadow-div rounded-lg pt-[11px] w-[125px] h-[108px]">
+                <div className="text-center font-semibold text-orange-main text-2xl mb-[5px]">100%</div>
+                <div className="text-center font-light text-xs">
+                  Web <br /> Development
+                </div>
+              </div>
+            </div>
+            <OurCapabilitiesBar />
           </div>
         </section>
         <section className="bg-dark-white-bg">
