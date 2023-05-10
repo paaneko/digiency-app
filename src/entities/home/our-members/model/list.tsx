@@ -91,7 +91,7 @@ function OurMemberList() {
       <motion.div
         whileHover={{ scale: 1.2, transition: { duration: 0.5 } }}
         whileTap={{ scale: 0.9 }}
-        className="hidden md:absolute top-[calc(50%-24px)] left-0 cursor-pointer"
+        className="hidden md:block absolute top-[calc(50%-24px)] left-0 cursor-pointer"
         onClick={() => paginate(1)}
       >
         <svg
@@ -108,7 +108,7 @@ function OurMemberList() {
       <motion.div
         whileHover={{ scale: 1.2, transition: { duration: 0.5 } }}
         whileTap={{ scale: 0.9 }}
-        className="hidden md:absolute top-[calc(50%-24px)] right-0 cursor-pointer"
+        className="hidden md:block absolute top-[calc(50%-24px)] right-0 cursor-pointer"
         onClick={() => paginate(-1)}
       >
         <svg
