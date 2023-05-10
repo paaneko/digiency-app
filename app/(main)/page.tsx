@@ -1,13 +1,12 @@
 import { HeroOne } from '@entities/home/hero';
-import { contactInfoConfig, portfolioProjectsConfig, servicesConfig } from '@shared/ui-config';
+import { contactInfoConfig, servicesConfig } from '@shared/ui-config';
 import { OurServices } from '@entities/home/ui/our-services';
 import Image from 'next/image';
-import { HomePortfolioProjectsType } from '@shared/ui-types';
-import { PortfolioProjects } from '@entities/home/ui/portfolio-projects';
 import { ContactCards } from '@entities/home/contact-cards';
 import { ContactUsForm } from '@features/contact-us/ui';
 import ReviewList from '@entities/home/our-testimonial/model/list';
 import OurBlogList from '@entities/home/our-blog/model/list';
+import OurMemberList from '@entities/home/our-members/model/list';
 
 export default function Home() {
   return (
@@ -19,14 +18,14 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div className="container my-[120px] ">
+          <div className="container my-[60px] md:my-[120px]">
             <div className="text-orange-main flex items-center justify-center">
               <hr className="bg-orange-main w-8" />
-              <div className="mx-2 font-normal">Our Services</div>
+              <div className="mx-2 font-normal text-sm md:text-base">Our Services</div>
               <hr className="bg-orange-main w-8" />
             </div>
-            <div className="font-semibold text-4xl mt-2 mb-6 text-center ">What We Do</div>
-            <div className="flex flex-wrap justify-between">
+            <div className="font-semibold text-2xl md:text-3xl xl:text-4xl mt-2 mb-6 text-center ">What We Do</div>
+            <div className="flex flex-wrap justify-center md:justify-between">
               {servicesConfig.map((service) => (
                 <OurServices
                   key={service.label}
@@ -40,14 +39,16 @@ export default function Home() {
           </div>
         </section>
         <section className="bg-dark-white-bg">
-          <div className="container flex justify-between py-[120px]">
-            <div className="max-w-[544px]">
-              <div className="text-orange-main flex items-center ">
-                <div className="mr-2 font-normal">About Us</div>
-                <hr className="bg-orange-main w-8" />
+          <div className="container flex flex-col-reverse md:flex-row justify-between items-center py-[60px] md:py-[120px]">
+            <div className="md:max-w-[344px] xl:max-w-[544px]">
+              <div className="text-orange-main flex justify-center md:justify-start items-center mt-5 md:m-0">
+                <div className=" mr-2 font-normal text-sm md:text-base">About Us</div>
+                <hr className="hidden md:block bg-orange-main w-8" />
               </div>
-              <div className="font-semibold text-4xl mt-2 mb-6 leading-[58px] ">Grow Your Business With Our Agency</div>
-              <div className="mb-6 text-gray-pg">
+              <div className="text-center md:text-left font-semibold text-2xl md:text-3xl xl:text-4xl mt-2 mb-6 xl:leading-[58px] ">
+                Grow Your Business With <span className="text-orange-main">Our Agency</span>
+              </div>
+              <div className="text-center md:text-left mb-6 text-gray-pg">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis arcu in tincidunt sed imperdiet etiam
                 fames. Tincidunt augue risus mattis eget sem habitant id ultrices augue. Sit rhoncus .
               </div>
@@ -66,39 +67,61 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <Image className="inline-flex" width={620} height={387} src="about-us.svg" alt="about-us" />
+            <div className="relative w-[300px] h-[200px] md:w-[335px] md:h-[225px] xl:w-[620px] xl:h-[387px]">
+              <Image className="inline-flex object-cover object-left" fill src="about-us.svg" alt="about-us" />
+            </div>
           </div>
         </section>
         <section>
           <div className="my-[120px]">
             <div className="container">
-              <div className="text-orange-main flex items-center ">
-                <div className="mr-2 font-normal mb-3">Portfolio</div>
+              <div className="text-orange-main flex justify-center items-center">
+                <hr className="bg-orange-main w-8" />
+                <div className="mx-2 font-normal text-center text-sm md:text-base">Our Members</div>
                 <hr className="bg-orange-main w-8" />
               </div>
-              <div className="flex items-center justify-between mb-3">
-                <div className="font-semibold text-[39px] leading-[58px] ">Our Recent Project</div>
-                <div className="flex space-x-4 font-medium text-gray-pg">
-                  <div className="cursor-pointer hover:text-orange-main duration-500">All</div>
-                  <div className="cursor-pointer hover:text-orange-main duration-500">UX Design</div>
-                  <div className="cursor-pointer hover:text-orange-main duration-500">Web Design</div>
-                  <div className="cursor-pointer hover:text-orange-main duration-500">App Development</div>
-                  <div className="cursor-pointer hover:text-orange-main duration-500">Game Design</div>
-                  <div className="cursor-pointer hover:text-orange-main duration-500">Graphic Design</div>
+              <div className="flex-col items-center justify-center mb-3 mt-2">
+                <div className="text-2xl text-center font-semibold md:text-3xl xl:text-4xl xl:leading-[58px]">
+                  We Have
+                </div>
+                <div className="text-2xl text-center font-semibold md:text-3xl xl:text-4xl xl:leading-[58px]">
+                  <span className="text-orange-main">Some Awesome</span> People
                 </div>
               </div>
-              <div className="flex flex-wrap justify-between">
-                {portfolioProjectsConfig.map((portfolioProject: HomePortfolioProjectsType) => (
-                  <PortfolioProjects
-                    key={portfolioProject.label}
-                    img={portfolioProject.img}
-                    label={portfolioProject.label}
-                  />
-                ))}
-              </div>
+              <OurMemberList />
             </div>
           </div>
         </section>
+        {/* <section> */}
+        {/*  <div className="my-[120px]"> */}
+        {/*    <div className="container"> */}
+        {/*      <div className="text-orange-main flex items-center "> */}
+        {/*        <div className="mr-2 font-normal mb-3">Portfolio</div> */}
+        {/*        <hr className="bg-orange-main w-8" /> */}
+        {/*      </div> */}
+        {/*      <div className="flex items-center justify-between mb-3"> */}
+        {/*        <div className="font-semibold text-[39px] leading-[58px] ">Our Recent Project</div> */}
+        {/*        <div className="flex space-x-4 font-medium text-gray-pg"> */}
+        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">All</div> */}
+        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">UX Design</div> */}
+        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">Web Design</div> */}
+        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">App Development</div> */}
+        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">Game Design</div> */}
+        {/*          <div className="cursor-pointer hover:text-orange-main duration-500">Graphic Design</div> */}
+        {/*        </div> */}
+        {/*      </div> */}
+        {/*      <div className="flex flex-wrap justify-between"> */}
+        {/*        {portfolioProjectsConfig.map((portfolioProject: HomePortfolioProjectsType) => ( */}
+        {/*          <PortfolioProjects */}
+        {/*            key={portfolioProject.label} */}
+        {/*            img={portfolioProject.img} */}
+        {/*            label={portfolioProject.label} */}
+        {/*          /> */}
+        {/*        ))} */}
+        {/*      </div> */}
+        {/*    </div> */}
+        {/*  </div> */}
+        {/* </section> */}
         <section className="bg-dark-white-bg">
           <div className="py-[120px]">
             <div className="container flex-row justify-center">

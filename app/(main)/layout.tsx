@@ -1,5 +1,5 @@
+import { Poppins } from 'next/font/google';
 import './globals.css';
-import { Poppins } from '@next/font/google';
 import Header from '@widgets/header';
 import { Footer } from '@widgets/footer';
 import Image from 'next/image';
