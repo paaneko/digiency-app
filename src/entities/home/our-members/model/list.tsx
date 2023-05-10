@@ -53,35 +53,34 @@ function OurMemberList() {
   return (
     <div className="relative flex justify-center items-center h-[350px]">
       <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          className="absolute"
-          key={slide}
-          custom={direction}
-          initial="enter"
-          variants={variants}
-          animate="center"
-          exit="exit"
-          transition={{ x: { type: 'spring', stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
+        {data
+          .filter((_, i) => i === itemIndex)
+          .map((item) => (
+            <motion.div
+              className="absolute"
+              key={slide}
+              custom={direction}
+              initial="enter"
+              variants={variants}
+              animate="center"
+              exit="exit"
+              transition={{ x: { type: 'spring', stiffness: 300, damping: 30 }, opacity: { duration: 0.2 } }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={1}
+              onDragEnd={(e, { offset, velocity }) => {
+                const swipe = swipePower(offset.x, velocity.x);
 
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        >
-          <OurMemberItem
-            name={data[itemIndex].name}
-            authorTag={data[itemIndex].authorTag}
-            slug={data[itemIndex].slug}
-            image={data[itemIndex].image}
-          />
-        </motion.div>
+                if (swipe < -swipeConfidenceThreshold) {
+                  paginate(1);
+                } else if (swipe > swipeConfidenceThreshold) {
+                  paginate(-1);
+                }
+              }}
+            >
+              <OurMemberItem name={item.name} authorTag={item.authorTag} slug={item.slug} image={item.image} />
+            </motion.div>
+          ))}
       </AnimatePresence>
       <motion.div
         whileHover={{ scale: 1.2, transition: { duration: 0.5 } }}
