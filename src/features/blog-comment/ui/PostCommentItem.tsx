@@ -17,8 +17,8 @@ function PostCommentItem({ commentItem }: PostCommentItemProps) {
       </div>
       <div className="flex-grow">
         <div className="flex justify-between">
-          <div className="font-semibold text-2xl text-orange-main">{commentItem.name}</div>
-          <div className="">
+          <div className="font-semibold text-xl md:text-2xl text-orange-main">{commentItem.name}</div>
+          <div className="hidden md:block">
             {new Date(commentItem._createdAt).toLocaleDateString('en-US', {
               day: 'numeric',
               month: 'long',
@@ -29,7 +29,7 @@ function PostCommentItem({ commentItem }: PostCommentItemProps) {
             })}
           </div>
         </div>
-        <div className="font-medium text-gray-pg mt-4">{commentItem.body}</div>
+        <div className="font-medium text-gray-pg mt-1 md:mt-4">{commentItem.body}</div>
       </div>
     </div>
   );

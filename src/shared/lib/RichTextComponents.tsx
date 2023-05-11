@@ -15,13 +15,21 @@ const RichTextComponents: Partial<PortableTextReactComponents> = {
   },
   list: {
     bullet: ({ children }: any) => <ul className="ml-10 py-5 list-disc space-y-5">{children}</ul>,
-    number: ({ children }: any) => <ol className="mt-lg list-decimal">{children}</ol>,
+    number: ({ children }: any) => <ol className="mt-lg ml-5 mt-2 list-decimal">{children}</ol>,
   },
   block: {
-    h1: ({ children }: any) => <h1 className="text-5xl text-orange-main py-10 font-bold">{children}</h1>,
-    h2: ({ children }: any) => <h2 className="text-4xl text-orange-main py-10 font-bold">{children}</h2>,
-    h3: ({ children }: any) => <h3 className="text-3xl text-orange-main py-10 font-bold">{children}</h3>,
-    h4: ({ children }: any) => <h4 className="text-2xl text-orange-main py-10 font-bold">{children}</h4>,
+    h1: ({ children }: any) => (
+      <h1 className="text-2xl md:text-4xl xl:text-5xl text-orange-main py-3 md:py-10 font-bold">{children}</h1>
+    ),
+    h2: ({ children }: any) => (
+      <h2 className="text-xl md:text-3xl xl:text-4xl text-orange-main py-3 md:py-10 font-bold">{children}</h2>
+    ),
+    h3: ({ children }: any) => (
+      <h3 className="text-xl md:text-3xl xl:text-4xl text-orange-main py-3 md:py-10 font-bold">{children}</h3>
+    ),
+    h4: ({ children }: any) => (
+      <h4 className="text-base md:text-2xl xl:text-3xl text-orange-main py-3 md:py-10 font-bold">{children}</h4>
+    ),
     blockquote: ({ children }: any) => (
       <blockquote className="border-l-orange-main border-l-4 pl-5 py-5 my-5">{children}</blockquote>
     ),

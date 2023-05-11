@@ -22,40 +22,49 @@ export function PostItem({ post }: Props) {
 
   return (
     <section>
-      <div className="relative w-full h-[670px] mt-10 mx-auto ">
-        <Image className="object-contain" fill src={urlFor(post.mainImage).url()} alt={post.title} />
+      <div className="relative w-full h-[200px] md:h-[400px] xl:h-[600px] mt-10 mx-auto ">
+        <Image className="object-cover object-center" fill src={urlFor(post.mainImage).url()} alt={post.title} />
       </div>
-      <div className="px-24">
+      <div className="md:px-24">
         <PostInfo
           createdAt={post._createdAt}
           authorName={post.author?.name ?? post.team?.name}
           authorSlug={post.author?.slug}
-          commentCount={9}
         />
       </div>
-      <div className="mx-8 text-gray-pg">
+      <div className="md:mx-8 text-gray-pg">
         <PortableText value={post.body} components={RichTextComponents} />
       </div>
-      <div className="flex p-5 bg-dark-white-bg mt-20">
-        <div className="w-20 h-20">
+      <div className="flex flex-col md:flex-row justify-center p-5 bg-dark-white-bg mt-20">
+        <div className="flex justify-center md:justify-start">
           <div className="object-contain relative w-[100px] h-[100px]">
-            <Image
-              fill
-              src={urlFor(post.author?.image ?? post.team?.image).url()}
-              alt={post.author ? post.author.name : post.team?.name || ''}
-              className="rounded-full"
-            />
+            <ClientSideRoute
+              route={`/blog/${post.author?.name ? 'author' : 'team'}/${
+                post.author?.slug.current ?? post.team?.slug.current
+              }`}
+            >
+              <Image
+                fill
+                src={urlFor(post.author?.image ?? post.team?.image).url()}
+                alt={post.author ? post.author.name : post.team?.name || ''}
+                className="rounded-full"
+              />
+            </ClientSideRoute>
           </div>
         </div>
-        <div className="ml-12 ">
+        <div className="md:ml-12 ">
           <ClientSideRoute
             route={`/blog/${post.author?.name ? 'author' : 'team'}/${
               post.author?.slug.current ?? post.team?.slug.current
             }`}
           >
-            <div className="mt-4 font-medium text-xl">{post.author?.name ?? post.team?.name}</div>
+            <div className="text-center md:text-left mt-4 font-medium text-xl">
+              {post.author?.name ?? post.team?.name}
+            </div>
           </ClientSideRoute>
-          <div className="mt-3 text-orange-main">{post.author?.authorTag.title ?? post.team?.tag.title}</div>
+          <div className="text-center md:text-left mt-3 text-orange-main">
+            {post.author?.authorTag.title ?? post.team?.tag.title}
+          </div>
           <div className="mt-2.5 text-gray-pg">
             <PortableText
               value={post.author ? post.author.bio : post.team?.bio || []}
