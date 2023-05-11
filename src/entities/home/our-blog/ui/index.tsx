@@ -6,9 +6,14 @@ import { ClientSideRoute } from '@shared/lib/ClientSideRoute';
 
 export function OurBlogItem({ mainImage, createdAt, title, description, author, slug }: BlogItem) {
   return (
-    <div className="w-[370px] p-[15px] bg-white rounded-lg flex-col justify-between inline-flex">
-      <div className="flex space-x-2">
-        <Image className="rounded-lg" width={340} height={255} src={urlFor(mainImage.asset._ref).url()} alt={title} />
+    <div className="w-[300px] md:w-[335px] xl:w-[370px] mr-4 md:mr-8 h-[600px] p-[15px] bg-white rounded-lg flex-col justify-between inline-flex">
+      <div className="relative md:w-[305px] xl:w-[340px] min-h-[235px] pointer-events-none">
+        <Image
+          className="rounded-lg object-cover object-center"
+          fill
+          src={urlFor(mainImage.asset._ref).url()}
+          alt={title}
+        />
       </div>
       <div className="font-medium text-[20px] my-3.5">{title}</div>
       <div className="flex text-[13px] font-medium justify-around ">

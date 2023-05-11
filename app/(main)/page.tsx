@@ -189,18 +189,20 @@ export default function Home() {
           </div>
         </section>
         <section className="bg-dark-white-bg">
-          <div className="py-[120px]">
+          <div className="py-[60px] md:py-[120px]">
             <div className="container flex-row justify-center">
               <div className="flex justify-center">
                 <div className="">
                   <div className="flex justify-center">
                     <div className="text-orange-main flex items-center">
                       <hr className="bg-orange-main w-8" />
-                      <div className="mx-2 font-normal text-center">Our Blog</div>
+                      <div className="mx-2 font-normal text-center text-sm md:text-base">Our Blog</div>
                       <hr className="bg-orange-main w-8" />
                     </div>
                   </div>
-                  <div className="font-semibold text-[39px] leading-[58px] ">Every Singel Update From Here</div>
+                  <div className="text-2xl text-center md:mt-4 md:mb-2 font-semibold md:text-3xl xl:text-4xl xl:leading-[58px]">
+                    Every Singel Update From Here
+                  </div>
                 </div>
               </div>
               <OurBlogList />
