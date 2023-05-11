@@ -210,22 +210,22 @@ export default function Home() {
           </div>
         </section>
         <section className="">
-          <div className="py-[120px]">
-            <div className="container flex-row justify-center">
+          <div className="py-[60px] md:py-[120px]">
+            <div className="flex-row justify-center">
               <div className="">
                 <div className="flex justify-center">
                   <div className="text-orange-main flex items-center">
                     <hr className="bg-orange-main w-8" />
-                    <div className="mx-2 font-normal text-center">Contact Us</div>
+                    <div className="mx-2 font-normal text-sm md:text-base">Contact Us</div>
                     <hr className="bg-orange-main w-8" />
                   </div>
                 </div>
-                <div className="flex-col">
-                  <div className="font-semibold text-[39px] leading-[58px] text-center">
+                <div className="flex-col mt-2">
+                  <div className="text-2xl text-center md:mt-4 md:mb-2 font-semibold md:text-3xl xl:text-4xl">
                     Feel <span className="text-orange-main">Free</span>
                   </div>
-                  <div className="font-semibold text-[39px] leading-[58px] text-center">
-                    <span className="text-orange-main">to Contact</span> With Us
+                  <div className="text-2xl text-center md:mt-4 md:mb-2 font-semibold md:text-3xl xl:text-4xl">
+                    to <span className="text-orange-main">Contact</span> With Us
                   </div>
                 </div>
                 <ContactCards

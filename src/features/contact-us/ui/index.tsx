@@ -41,12 +41,19 @@ export function ContactUsForm() {
   const blurClass = showLoading ? 'blur-sm' : null;
 
   return (
-    <div className="flex justify-between">
-      <Image className="inline-flex" width={490} height={333} src="contact-us-form.svg" alt="contact-us-form-image" />
+    <div className="flex justify-between items-center">
+      <div className="relative md:w-[400px] md:h-[200px] xl:w-[590px] xl:h-[400px]">
+        <Image
+          className="inline-flex object-cover object-center"
+          fill
+          src="contact-us-form.svg"
+          alt="contact-us-form-image"
+        />
+      </div>
       <div className="relative">
         {!submitted && !notSubmitted && (
           <>
-            <div className="font-semibold text-3xl">
+            <div className="text-2xl text-center md:mt-4 md:mb-2 font-semibold xl:text-4xl">
               Send Your <span className="text-orange-main">Message To Us</span>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className={`${blurClass}`}>
