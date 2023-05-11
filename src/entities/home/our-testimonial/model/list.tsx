@@ -58,7 +58,7 @@ function ReviewList() {
           <ReviewItem review={item} />
         ))}
       </div>
-      <div className="block xl:hidden relative flex justify-center items-center mt-12 h-[270px]">
+      <div className="block xl:hidden relative flex justify-center items-center mt-12 h-[270px] overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           {data.ourTestimonial
             .filter((_, i) => i === itemIndex)

@@ -109,13 +109,13 @@ export function ContactUsForm() {
           </>
         )}
         {submitted && (
-          <div className="py-32 p-12 text-white bg-orange-main">
+          <div className="py-16 md:py-32 p-6 md:p-12 text-white bg-orange-main">
             <div className="font-semibold text-2xl text-center">Request successfully accepted</div>
             <p className="font-medium mt-2 text-center">We will be in touch with you shortly</p>
           </div>
         )}
         {notSubmitted && (
-          <div className="py-32 p-12 text-white bg-orange-main">
+          <div className="py-16 md:py-32 p-6 md:p-12 text-white bg-orange-main">
             <div className="font-semibold text-2xl text-center">An error occurred while sending the request</div>
             <p className="font-medium mt-2 text-center">Please try later or click below</p>
             <div className="flex justify-center">

@@ -51,7 +51,7 @@ function OurMemberList() {
     setPage([slide + newDirection, newDirection]);
   };
   return (
-    <div className="relative flex justify-center items-center mt-12 h-[350px] md:h-[450px] xl:h-[550px]">
+    <div className="relative flex justify-center items-center mt-12 h-[350px] md:h-[450px] xl:h-[550px] overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         {data
           .filter((_, i) => i === itemIndex)
