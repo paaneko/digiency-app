@@ -14,7 +14,7 @@ function CategoryFilter(props: any) {
   };
 
   return (
-    <div className="py-8 px-5 shadow-div my-6">
+    <div className="py-8 px-5 shadow-div my-6 w-full md:w-[330px] xl:w-full">
       <div className="text-3xl font-medium">Tags</div>
       <ul className="mt-6">
         {items.map((item) => (

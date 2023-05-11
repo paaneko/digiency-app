@@ -9,7 +9,6 @@ export function BlogHero() {
   return (
     <div className="text-center">
       <div className="font-bold text-5xl mb-5">{heroTitle}</div>
-      <div className="">Home - Blog Page</div>
     </div>
   );
 }

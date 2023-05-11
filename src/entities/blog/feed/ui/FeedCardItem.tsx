@@ -22,32 +22,36 @@ export function FeedCardItem({ hit }: AlgoliaHitProps) {
           <ClientSideRoute route={`/blog/${hit.type === 'post' ? 'author' : 'team'}/${hit.author.slug.current}`}>
             <span
               dangerouslySetInnerHTML={{ __html: hit._highlightResult.author.name.value }}
-              className="font-medium cursor-pointer hover:"
+              className="text-sm md:text-base md:font-medium cursor-pointer "
             />
           </ClientSideRoute>{' '}
-          in <span className="font-medium text-orange-main ">{hit.categories.title}</span>
+          in <span className="text-sm md:text-base md:font-medium text-orange-main ">{hit.categories.title}</span>
         </div>
         <ClientSideRoute route={`/blog/p/${hit.slug}`}>
           <div
             dangerouslySetInnerHTML={{ __html: hit._highlightResult.title.value }}
-            className="font-semibold text-xl mt-2"
+            className="w-[228px] md:w-full line-clamp-2 md:line-clamp-3 font-semibold md:text-xl mt-2"
           />
         </ClientSideRoute>
         <div
           dangerouslySetInnerHTML={{ __html: hit._highlightResult.description.value }}
-          className="line-clamp-2 text-gray-pg pt-1"
+          className="hidden md:display-webkit-box line-clamp-2 text-gray-pg pt-1"
         />
         <div className="pt-2">
-          {new Date(hit.createdAt).toLocaleDateString('en-US', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-          })}
-          <span className="px-2">·</span>
-          <span className="py-1 px-2.5 text-sm bg-dark-white-bg rounded-full">{hit.tag.title}</span>
+          <span className="text-sm md:text-base">
+            {new Date(hit.createdAt).toLocaleDateString('en-US', {
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </span>
+          <span className="px-2 hidden md:inline-block">·</span>
+          <span className="py-1 px-2.5 text-sm bg-dark-white-bg rounded-full hidden md:inline-block">
+            {hit.tag.title}
+          </span>
         </div>
       </div>
-      <div className="min-w-[200px] h-[134px] ml-5">
+      <div className="max-w-[100px] h-[100px] md:min-w-[200px] md:h-[134px] ml-5">
         <Image
           className="w-full h-full object-cover object-center"
           width={200}

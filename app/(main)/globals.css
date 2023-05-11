@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.display-webkit-box {
+  display: -webkit-box;
+}
+
+@media (min-width: 768px) {
+  .md\:display-webkit-box {
+    display: -webkit-box;
+  }
+}
+
 .overlapGrid {
   display: grid;
   grid-template-areas: "image" "overlay";
