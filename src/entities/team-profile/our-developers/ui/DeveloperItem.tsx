@@ -13,21 +13,23 @@ function DeveloperItem({ developer }: DeveloperItemProps) {
   return (
     <div className="flex p-5 bg-dark-white-bg mt-5">
       <div className="w-20 h-20">
-        <div className="object-contain relative w-[100px] h-[100px]">
-          <Image
-            fill
-            src={urlFor(developer.image.asset._ref).url()}
-            alt={`${developer.name} profile image`}
-            className="rounded-full"
-          />
+        <div className="object-contain relative w-[75px] h-[75px] md:w-[100px] md:h-[100px]">
+          <ClientSideRoute route={`/blog/author/${developer.slug.current}`}>
+            <Image
+              fill
+              src={urlFor(developer.image.asset._ref).url()}
+              alt={`${developer.name} profile image`}
+              className="rounded-full"
+            />
+          </ClientSideRoute>
         </div>
       </div>
-      <div className="ml-12 ">
+      <div className="ml-6 md:ml-12">
         <ClientSideRoute route={`/blog/author/${developer.slug.current}`}>
-          <div className="mt-4 font-medium text-xl">{developer.name}</div>
+          <div className="md:mt-4 font-medium text-xl">{developer.name}</div>
         </ClientSideRoute>
         <div className="mt-3 text-orange-main">{developer.authorTag.title}</div>
-        <div className="mt-2.5 text-gray-pg">
+        <div className="hidden md:block mt-2.5 text-gray-pg">
           <PortableText value={developer.bio} components={RichTextComponents} />
         </div>
       </div>

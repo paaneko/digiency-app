@@ -17,8 +17,10 @@ function AuthorRelatedProjects({ slug }: AuthorRelatedProjectsProps) {
     return <div>Something went wrong try later</div>;
   }
   return (
-    <div>
-      <div className="font-semibold text-3xl">Also take part in this projects: </div>
+    <div className="flex flex-col items-center mt-12 xl:m-0">
+      <div className="font-semibold text-center xl:text-left text-xl md:text-2xl xl:text-3xl">
+        Also take part in this projects:{' '}
+      </div>
       {data?.map((post) => (
         <RelatedItem item={post} />
       ))}

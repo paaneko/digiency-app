@@ -17,8 +17,10 @@ function AuthorRelatedPosts({ slug }: AuthorRelatedPostsProps) {
     return <div>Something went wrong try later</div>;
   }
   return (
-    <div>
-      <div className="font-semibold text-3xl">Author of this Posts: </div>
+    <div className="flex flex-col items-center">
+      <div className="font-semibold text-center xl:text-left text-xl md:text-2xl xl:text-3xl">
+        Author of this Posts:{' '}
+      </div>
       {data?.map((post) => (
         <RelatedItem item={post} />
       ))}

@@ -12,7 +12,7 @@ async function AuthorPage({ params: { slug } }: Props) {
   return (
     <div className="mb-28">
       <AuthorItem slug={slug} />
-      <div className="flex justify-between mt-10">
+      <div className="flex flex-col xl:flex-row md:justify-between mt-10">
         <AuthorRelatedPosts slug={slug} />
         <div className="border-orange-main border-r-2" />
         <AuthorRelatedProjects slug={slug} />
