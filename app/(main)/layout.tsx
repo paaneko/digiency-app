@@ -1,6 +1,6 @@
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import Header from '@widgets/header';
+import Header from '@widgets/header/ui';
 import { Footer } from '@widgets/footer';
 import Image from 'next/image';
 import StyledComponentsRegistry from '@shared/lib/registry';
@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <StyledComponentsRegistry>
           <header className="bg-dark-white-bg fixed top-0 w-full z-50 shadow-lg">
-            <div className="container">
+            <div className="md:container px-10 md:px-[48px]">
               <Header />
             </div>
           </header>
