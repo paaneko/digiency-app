@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 
-const TeamProfileInfoQuery = groq`
+const teamProfileInfoQuery = groq`
 *[_type == 'team' && slug.current==$slug][0] {
   bio,
   image,
@@ -19,4 +19,4 @@ const TeamProfileInfoQuery = groq`
 }
 `;
 
-export default TeamProfileInfoQuery;
+export default teamProfileInfoQuery;

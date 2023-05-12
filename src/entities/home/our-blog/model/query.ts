@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 
-const reviewListQuery = groq`
+const ourBlogListQuery = groq`
 *[_type == 'post' && !(_id in path('drafts.**'))][0..9] {
   mainImage,
   description,
@@ -13,4 +13,4 @@ const reviewListQuery = groq`
   slug,
 }
 `;
-export default reviewListQuery;
+export default ourBlogListQuery;

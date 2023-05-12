@@ -8,8 +8,19 @@ import ReviewList from '@entities/home/our-testimonial/model/list';
 import OurBlogList from '@entities/home/our-blog/model/list';
 import OurMemberList from '@entities/home/our-members/model/list';
 import OurCapabilitiesBar from '@entities/home/our-capabilities-bar/ui';
+import sanityClient from '@shared/lib/sanity.client';
+import OurMemberItemType from '@entities/home/our-members/model/types';
+import ourMemberListQuery from '@entities/home/our-members/model/query';
+import OurBlogItemType from '@entities/home/our-blog/model/types';
+import ourBlogListQuery from '@entities/home/our-blog/model/query';
+import { ReviewListQueryType } from '@entities/home/our-testimonial/model/types';
+import reviewListQuery from '@entities/home/our-testimonial/model/query';
 
-export default function Home() {
+export default async function Home() {
+  const membersListData = await sanityClient.fetch<OurMemberItemType[]>(ourMemberListQuery);
+  const reviewListData = await sanityClient.fetch<ReviewListQueryType>(reviewListQuery);
+  const ourBlogListData = await sanityClient.fetch<OurBlogItemType[]>(ourBlogListQuery);
+
   return (
     <main>
       <div>
@@ -89,7 +100,7 @@ export default function Home() {
                   <span className="text-orange-main">Some Awesome</span> People
                 </div>
               </div>
-              <OurMemberList />
+              <OurMemberList data={membersListData} />
             </div>
           </div>
         </section>
@@ -110,7 +121,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <ReviewList />
+              <ReviewList data={reviewListData.ourTestimonial} />
             </div>
           </div>
         </section>
@@ -205,7 +216,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <OurBlogList />
+              <OurBlogList data={ourBlogListData} />
             </div>
           </div>
         </section>

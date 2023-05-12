@@ -1,6 +1,6 @@
 import { Image, Slug } from '@shared/ui-types';
 
-type OurBlogItem = {
+type OurBlogItemType = {
   mainImage: Image;
   description: string;
   title: string;
@@ -12,4 +12,4 @@ type OurBlogItem = {
   slug: Slug;
 };
 
-export default OurBlogItem;
+export default OurBlogItemType;

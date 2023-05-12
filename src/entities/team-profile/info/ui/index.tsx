@@ -5,27 +5,15 @@ import urlFor from '@shared/lib/urlFor';
 import RichTextComponents from '@shared/lib/RichTextComponents';
 import { PortableText } from '@portabletext/react';
 import { useBlogHeroContext } from '@widgets/blog-hero/model/useBlogHeroContext';
-import useTeamProfileInfoQuery from '@entities/team-profile/info/api/useTeamProfileQuery';
-import TeamProfileInfoQuery from '@entities/team-profile/info/model/query';
 import DeveloperList from '@entities/team-profile/our-developers/model/list';
+import TeamProfileInfoType from '@entities/team-profile/info/model/types';
 
 type TeamItemProps = {
-  slug: string;
+  data: TeamProfileInfoType;
 };
 
-function TeamItem({ slug }: TeamItemProps) {
+function TeamItem({ data }: TeamItemProps) {
   const { setHeroTitle } = useBlogHeroContext();
-  const { data, isLoading, error } = useTeamProfileInfoQuery(TeamProfileInfoQuery, slug);
-
-  if (isLoading) {
-    setHeroTitle('Loading ...');
-    return <div className="my-60">Loading ...</div>;
-  }
-
-  if (error) {
-    setHeroTitle('Error something went wrong');
-    return <div className="my-60">Error occurred </div>;
-  }
 
   setHeroTitle(data.name);
   return (

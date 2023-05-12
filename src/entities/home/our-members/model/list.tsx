@@ -1,11 +1,10 @@
 'use client';
 
-import useOurMemberListQuery from '@entities/home/our-members/api/useOurMemberListQuery';
-import ourMemberListQuery from '@entities/home/our-members/model/query';
 import OurMemberItem from '@entities/home/our-members/ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { wrap } from 'popmotion';
 import { useState } from 'react';
+import OurMemberItemType from '@entities/home/our-members/model/types';
 
 const variants = {
   enter: (direction: number) => {
@@ -33,17 +32,12 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
-function OurMemberList() {
-  const { data, isLoading, error } = useOurMemberListQuery(ourMemberListQuery);
+interface OurMembersListProps {
+  data: OurMemberItemType[];
+}
+
+function OurMemberList({ data }: OurMembersListProps) {
   const [[slide, direction], setPage] = useState([0, 0]);
-
-  if (isLoading) {
-    return <div className="my-60">Loading ...</div>;
-  }
-
-  if (error) {
-    return <div className="my-60">Error occurred </div>;
-  }
 
   const itemIndex = wrap(0, data.length, slide);
 

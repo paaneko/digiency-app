@@ -1,11 +1,10 @@
 'use client';
 
 import ReviewItem from '@entities/home/our-testimonial/ui';
-import useReviewListQuery from '@entities/home/our-testimonial/api/useReviewListQuery';
-import reviewListQuery from '@entities/home/our-testimonial/model/query';
 import { useState } from 'react';
 import { wrap } from 'popmotion';
 import { AnimatePresence, motion } from 'framer-motion';
+import { ReviewType } from '@entities/home/our-testimonial/model/types';
 
 const variants = {
   enter: (direction: number) => {
@@ -33,19 +32,14 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
-function ReviewList() {
-  const { data, isLoading, error } = useReviewListQuery(reviewListQuery);
+interface ReviewListProps {
+  data: ReviewType[];
+}
+
+function ReviewList({ data }: ReviewListProps) {
   const [[slide, direction], setPage] = useState([0, 0]);
 
-  if (isLoading) {
-    return <div className="my-60">Loading ...</div>;
-  }
-
-  if (error) {
-    return <div className="my-60">Error occurred </div>;
-  }
-
-  const itemIndex = wrap(0, data.ourTestimonial.length, slide);
+  const itemIndex = wrap(0, data.length, slide);
 
   const paginate = (newDirection: number) => {
     setPage([slide + newDirection, newDirection]);
@@ -54,13 +48,13 @@ function ReviewList() {
   return (
     <>
       <div className="hidden xl:flex justify-between mt-[60px]">
-        {data.ourTestimonial.map((item) => (
+        {data.map((item) => (
           <ReviewItem review={item} />
         ))}
       </div>
       <div className="block xl:hidden relative flex justify-center items-center mt-12 h-[270px] overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
-          {data.ourTestimonial
+          {data
             .filter((_, i) => i === itemIndex)
             .map((item) => (
               <motion.div

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import ReviewType from '@entities/home/our-testimonial/model/types';
+import { ReviewType } from '@entities/home/our-testimonial/model/types';
 import urlFor from '@shared/lib/urlFor';
 
 type ReviewProps = {

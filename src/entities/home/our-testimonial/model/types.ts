@@ -1,10 +1,12 @@
 import { Image } from '@shared/ui-types';
 
-type ReviewType = {
+export type ReviewType = {
   name: string;
   body: string;
   specialization: string;
   image: Image;
 };
 
-export default ReviewType;
+export type ReviewListQueryType = {
+  ourTestimonial: ReviewType[];
+};

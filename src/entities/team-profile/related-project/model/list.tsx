@@ -1,21 +1,13 @@
 'use client';
 
 import RelatedItem from '@shared/ui/RelatedItem';
-import useRelatedQuery from '@shared/api/useRelatedQuery';
-import teamRelatedProjectsQuery from '@entities/team-profile/related-project/model/query';
+import { AuthorRelatedItemType } from '@shared/types';
 
 type AuthorRelatedProjectsProps = {
-  slug: string;
+  data: AuthorRelatedItemType[];
 };
 
-function TeamRelatedProjects({ slug }: AuthorRelatedProjectsProps) {
-  const { data, isLoading, error } = useRelatedQuery(teamRelatedProjectsQuery, slug);
-  if (isLoading) {
-    return <div>Loading ...</div>;
-  }
-  if (error) {
-    return <div>Something went wrong try later</div>;
-  }
+function TeamRelatedProjects({ data }: AuthorRelatedProjectsProps) {
   return (
     <div>
       <div className="font-semibold text-3xl text-center">Projects from this team: </div>

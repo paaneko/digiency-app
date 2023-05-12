@@ -6,26 +6,14 @@ import RichTextComponents from '@shared/lib/RichTextComponents';
 import { PortableText } from '@portabletext/react';
 import { useBlogHeroContext } from '@widgets/blog-hero/model/useBlogHeroContext';
 import { ClientSideRoute } from '@shared/lib/ClientSideRoute';
-import useAuthorProfileInfoQuery from '@entities/author-profile/info/api/useAuthorProfileInfoQuery';
-import AuthorProfileInfoQuery from '@entities/author-profile/info/model/query';
+import { AuthorProfileInfoType } from '@entities/author-profile/info/model/types';
 
 type AuthorItemProps = {
-  slug: string;
+  data: AuthorProfileInfoType;
 };
 
-function AuthorItem({ slug }: AuthorItemProps) {
+function AuthorItem({ data }: AuthorItemProps) {
   const { setHeroTitle } = useBlogHeroContext();
-  const { data, isLoading, error } = useAuthorProfileInfoQuery(AuthorProfileInfoQuery, slug);
-
-  if (isLoading) {
-    setHeroTitle('Loading ...');
-    return <div className="my-60">Loading ...</div>;
-  }
-
-  if (error) {
-    setHeroTitle('Error something went wrong');
-    return <div className="my-60">Error occurred </div>;
-  }
 
   setHeroTitle(data.name);
   return (

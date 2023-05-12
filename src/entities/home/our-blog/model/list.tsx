@@ -1,14 +1,16 @@
 'use client';
 
 import { OurBlogItem } from '@entities/home/our-blog/ui';
-import useOurBlogListQuery from '@entities/home/our-blog/api/useOurBlogListQuery';
-import ourBlogListQuery from '@entities/home/our-blog/model/query';
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import OurBlogItemType from '@entities/home/our-blog/model/types';
 
-function OurBlogList() {
+interface OurBlogListProps {
+  data: OurBlogItemType[];
+}
+
+function OurBlogList({ data }: OurBlogListProps) {
   const [currentWidth, setCurrentWidth] = useState(0);
-  const { data, isLoading, error } = useOurBlogListQuery(ourBlogListQuery);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -16,14 +18,6 @@ function OurBlogList() {
       setCurrentWidth(ref.current.scrollWidth - ref.current.offsetWidth);
     }
   }, [data]);
-
-  if (isLoading) {
-    return <div className="my-60">Loading ...</div>;
-  }
-
-  if (error) {
-    return <div className="my-60">Error occurred </div>;
-  }
 
   return (
     <div ref={ref} className="cursor-grab overflow-hidden">

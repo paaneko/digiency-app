@@ -1,17 +1,17 @@
 import { groq } from 'next-sanity';
 
-const AuthorProfileInfoQuery = groq`
-*[_type == 'author' && slug.current==$authorSlug && !(_id in path("drafts.**"))][0] {
+const authorProfileInfoQuery = groq`
+*[_type == 'author' && slug.current==$slug && !(_id in path("drafts.**"))][0] {
   ...,
   "authorTag": authorTag->,
   "relatedPosts": *[
     _type == 'post' &&
-    author->slug.current == $authorSlug
+    author->slug.current == slug
   ] {
     _id,
   },
   "relatedTeams": *[
-    _type == 'team' && $authorSlug in members[]->slug.current && !(_id in path("drafts.**"))
+    _type == 'team' && $slug in members[]->slug.current && !(_id in path("drafts.**"))
   ] {
     "slug": slug.current,
     name,
@@ -19,4 +19,4 @@ const AuthorProfileInfoQuery = groq`
 }
 `;
 
-export default AuthorProfileInfoQuery;
+export default authorProfileInfoQuery;
